@@ -1,5 +1,5 @@
 <% if signed_in? %>
-<p>Welcome, <%=current_user.username%>!</p>
-<% else %> 
-<p>Please, sign in or sign up</p>
-<% end %>
+		<h1>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
+	<% else %>
+	<h1>Please, Sign In or Sign Up</h1>
+	<% end %>

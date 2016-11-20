@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/show'
+  
+	get '/users/profile' => 'users#profile'
+  
 	
 	devise_for :users, :controllers => { registrations: 'registrations' }	
   
