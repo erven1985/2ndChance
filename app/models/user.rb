@@ -11,5 +11,10 @@ class User < ApplicationRecord
 	validates_attachment_content_type :avatar,
   :content_type => /\Aimage\/.*\Z/
 
+  validates_presence_of :firstname
+  validates_presence_of :lastname
 
+  geocoded_by :address
+  after_validation :geocode
+  
 end

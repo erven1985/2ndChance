@@ -19,6 +19,10 @@
       <%= f.text_field :dob, autofocus: true, placeholder: 'mm/dd/yyyy', class: 'form-control' %>
     </div>
     <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
       <%= f.label :Gender %>
       <%= f.select(:gender, options_for_select(['male', 'female']), {:prompt => 'Select Gender'}, {:class => "form-control slct-box"}) %>
     </div>

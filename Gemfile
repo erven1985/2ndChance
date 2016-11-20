@@ -39,6 +39,7 @@ gem 'bootstrap-sass'
 gem 'pundit'
 #for uploading files
 gem 'paperclip', '~> 5.0.0'
+gem 'geocoder'
 group :development, :test do
 
 	gem 'rails_layout'
