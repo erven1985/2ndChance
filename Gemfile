@@ -29,11 +29,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise'
+#makes console pretty
+gem 'pry-rails'
+#easy user auth
+gem 'devise'  
 gem 'devise_roles'
+
 gem 'bootstrap-sass'
 gem 'pundit'
-
+#for uploading files
+gem 'paperclip', '~> 5.0.0'
 group :development, :test do
 
 	gem 'rails_layout'
