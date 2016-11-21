@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
   def profile 
-    
+    @places = current_user.places(:order => "id desc", :limit => 4).reverse
   end
+
 
   def index
   	@users = User.all
@@ -21,8 +22,11 @@ class UsersController < ApplicationController
 		  		redirect_to root_path, :alert  =>  'something went wrong'
   		end
    end
+
    private 
+
    def secure_params
    	params.require(:user).permit(:role)
    end
 end
+
