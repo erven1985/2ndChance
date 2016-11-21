@@ -1,19 +1,17 @@
 <!-- Page Content -->
 <div class="container">
 
-<!-- Jumbotron Header -->
 <header class="jumbotron hero-spacer">
   <% if signed_in? %>
 		<h1>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
 	<% else %>
-	<% end %>
+<% end %>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
     <p><%= link_to 'Edit account', edit_user_registration_path, class: "btn btn-primary btn-large" %>
     </p>
 </header>
 
 <hr>
-
 
 <!-- Title -->
 <div class="row">
@@ -22,23 +20,20 @@
     </div>
 </div>
 <!-- /.row -->
-<% @places.each do |place| %>
-<!-- Page Features -->
-<div class="row text-center">
-    <div class="col-md-3 col-sm-6 hero-feature">
-        <div class="thumbnail">
-            <img src="http://placehold.it/800x500" alt="">
-            <div class="caption">
-                <h3><%= place.name %></h3>
-                <p><%= place.address %></p>
-                <p>
-                <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
-                </p>
+    <% @places.each do |place| %>
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3><%= place.name %></h3>
+                        <p><%= place.address %></p>
+                        <p>
+                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
     <% end %>
-
-
 </div>
 <!-- /.row -->

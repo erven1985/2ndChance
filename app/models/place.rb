@@ -1,5 +1,9 @@
 class Place < ApplicationRecord
 
+def self.search(search)
+  where("name LIKE ?", "%#{search}%") 
+  # where("address LIKE ?", "%#{search}%")
+end
 	
 	has_and_belongs_to_many :users
 
