@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def profile 
-    @places = current_user.places(:order => "id desc", :limit => 4).reverse
+    @places = current_user.places.last(4).reverse
   end
 
 
