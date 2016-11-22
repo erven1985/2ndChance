@@ -8,7 +8,7 @@ class PlacesController < ApplicationController
 	    @places = Place.all.order('created_at DESC')
 
     end
-	    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+	  	  @hash = Gmaps4rails.build_markers(@places) do |place, marker|
 			  marker.lat place.latitude
 			  marker.lng place.longitude
 	  	end	  
@@ -21,4 +21,13 @@ class PlacesController < ApplicationController
 		@users = @place.users
 	end
 
+	  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    respond_to do |format|
+      format.html { redirect_to places_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 end
+
