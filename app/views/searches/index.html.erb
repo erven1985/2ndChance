@@ -1,1 +1,24 @@
 <!-- Form for search -->
+<div class="form-group">
+<%= form_tag search_path, method: :get do %>
+	<%= text_field_tag 'search' %>
+		<%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+<% end %>
+</div>
+
+		<% @items.each do |item| %> 
+			<div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3><%= item[:name] %></h3>        
+                        <h4><%= item[:id] %></h4>        
+                        <h4><%= item[:address] %></h4>        
+                    </div>
+                </div>
+            </div>
+    <% end %>
+</div>
+
+
