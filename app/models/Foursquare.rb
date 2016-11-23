@@ -11,7 +11,10 @@ def self.search(term)
   p uri
   response = JSON.parse(Net::HTTP.get(uri))
   data = response["response"]["venues"].map do |r|
-  { name: r["name"], id: r["id"], address: r["location"]["formattedAddress"], 
+  { name: r["name"], id: r["id"], address: r["location"]["address"], 
+  city: r["location"]["city"], 
+  state: r["location"]["state"], 
+  postalCode: r["location"]["postalCode"], 
   distance: r["location"]["distance"]} 
   end
 end

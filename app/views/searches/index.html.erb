@@ -6,20 +6,27 @@
 <% end %>
 </div>
 
-		<% @items.each do |item| %> 
-			<div class="row text-center">
+	<% @items.each do |item| %> 
+		<!-- <div class="row text-center"> -->
+          <div class="clearfix">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <img src="http://placehold.it/800x500" alt="">
                     <div class="caption">
-                        <h3><%= item[:name] %></h3>        
-                        <h4><%= item[:id] %></h4>        
-                        <h4><%= item[:address] %></h4>        
-                        <h4>Distance: <%= item[:distance] %></h4>        
+                        <h4><%= item[:name] %></h4>               
+                        <h5><%= item[:address] %></h5>        
+                        <h5><%= item[:city] %>, <%= item[:state] %>, <%= item[:postalCode] %></h5>
+                        <h4>Distance: <%= item[:distance] %></h4> 
+                        <%= form_for @place  do |f| %>
+                        <%= f.hidden_field :name, :value => item[:name] %>
+                        <%= f.hidden_field :address, :value => item[:address] %>
+                        <%= f.submit 'Save', :class => 'button right' %>
+                        <% end %>
                     </div>
                 </div>
             </div>
     <% end %>
 </div>
+
 
 
