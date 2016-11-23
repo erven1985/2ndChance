@@ -4,6 +4,7 @@ class PlacesController < ApplicationController
 	  def create
     @user = current_user
     @place = Place.new(place_params)
+    @user.places << @place
     respond_to do |format|
       if @place.save
         format.html { redirect_to places_path, notice: 'Place was successfully created.' }
@@ -56,7 +57,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :address)
+      params.require(:place).permit(:name, :address, :phone, :day, :month, :year, :time_from, :time_to)
     end
 
 

@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 20161121023149) do
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
+    t.string   "phone"
+    t.integer  "day"
+    t.string   "month"
+    t.integer  "year"
+    t.string   "time_to"
+    t.string   "time_from"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", null: false

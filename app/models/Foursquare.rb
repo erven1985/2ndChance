@@ -11,11 +11,12 @@ def self.search(term)
   p uri
   response = JSON.parse(Net::HTTP.get(uri))
   data = response["response"]["venues"].map do |r|
-  { name: r["name"], id: r["id"], address: r["location"]["address"], 
-  city: r["location"]["city"], 
-  state: r["location"]["state"], 
-  postalCode: r["location"]["postalCode"], 
-  distance: r["location"]["distance"]} 
+  { name: r["name"], id: r["id"],
+    address1: r["location"]["address"], 
+    address2: "#{r["location"]["city"]}, #{r["location"]["state"]}, #{r["location"]["postalCode"]}",
+    distance: r["location"]["distance"],
+    phone: r["contact"]["formattedPhone"]}
+  # logo: "#{r["categories"][0]["icon"]["prefix"]}88#{r["categories"][0]["icon"]["suffix"]}" }
   end
 end
 
