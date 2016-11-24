@@ -17,11 +17,12 @@ class PlacesController < ApplicationController
   end
 
 	def index
-	@places = Place.all
+	@user = current_user
+  @places = @user.places
 	  if params[:search]
-	    @places = Place.search(params[:search]).order("created_at DESC")
+	    @places = @places.search(params[:search]).order("created_at DESC")
 	  else
-	    @places = Place.all.order('created_at DESC')
+	    @places = @places.all.order('created_at DESC')
 
     end
 	  	  @hash = Gmaps4rails.build_markers(@places) do |place, marker|

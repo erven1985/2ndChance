@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
 before_action :configure_permitted_parameters, if: :devise_controller?
+helper_method :global_var 
 
 protected
 
@@ -12,5 +13,10 @@ end
 def after_sign_in_path_for(resource)
       users_profile_path(resource)
     end
+
+def global_var
+	$user_lat = current_user.latitude
+	$user_lon = current_user.longitude
+end
 
 end

@@ -18,7 +18,7 @@
                             <%= item[:address2] %></br>
                             Phone: <%= item[:phone] %> 
                         </address>
-                        <h5>Distance: <%= item[:distance] %></h5>                        
+                        <h5>Distance: <%= item[:distance].round(-2)/1000.0 %> miles</h5>                        
 
                         <!-- Form for a new Place -->
                         <%= form_for @place  do |f| %>
