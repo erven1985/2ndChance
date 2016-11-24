@@ -2,9 +2,44 @@
         <h1>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
     <% else %>
     <h1>Please, Sign In or Sign Up</h1>
+     <div class="container">
+		      <div id="home" class="row">     
+		           <div class="twelve columns">
+		              <img src="#">
+		              <h5 >Welcome to SecondChance</h5>
+		              <p>Do you ever wish you had a second chance to meet someone again?</p>
+		            </div>
+		          </div>  
+
+			    <div id="info" class="twelve columns">
+
+			         <div id="explanation" class="twelve columns">
+
+
+					        <div id="about" class="six columns">
+				        		<h3> What is this all about ? </h3>
+					        </div>
+
+
+						    <div id="what_p" class="six columns">
+						    			
+								    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+
+	
+							    		<br>	<br>
+							    		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+								    	
+											<br>	<br>
+							</div>
+			  	 	 </div>
+
+		<!-- Video -->
+    <div align="center" class="embed-responsive embed-responsive-16by9">
 			 <video width="800" height="600" poster="/images/poster.jpg" controls>
 			    <source src="FindSomeone.mp4" type="video/mp4">
 			 </video>
+			</div>
+
 
     <% end %>
 
