@@ -26,7 +26,7 @@ def self.searchPhoto(id)
   p uri
   response = JSON.parse(Net::HTTP.get(uri))
   data = response["response"]["photos"]["items"].map do |r|
-  { source: "#{r["prefix"]}300x300#{r["suffix"]}" }
+  { source: "#{r["prefix"]}800x500#{r["suffix"]}" }
 
   end
 end

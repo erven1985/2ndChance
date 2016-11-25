@@ -1,3 +1,37 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+   
+    $(document).ready(function() { 
+                           
+    var slides = $(".slider .slides").children(".slide");
+    var width = $(".slider .slides").width(); 
+    var i = slides.length;
+    var offset = i * width;
+    i--; 
+    $(".slider .slides").css('width',offset);
+    
+    offset = 0; 
+    $("body .slider .next").click(function(){ 
+       
+
+        if (offset < width * i) { 
+            offset += width;
+            $(".slider .slides").css("transform","translate3d(-"+offset+"px, 0px, 0px)");
+        }
+    });
+
+
+    $("body .slider .prev").click(function(){  
+        if (offset > 0) {
+            offset -= width; 
+            $(".slider .slides").css("transform","translate3d(-"+offset+"px, 0px, 0px)"); 
+        }
+    });
+
+});
+</script>
+
  <header class="business-header">
         <div class="container">
             <div class="row">
@@ -7,12 +41,27 @@
             </div>
         </div>
     </header>
+
+        <div class="slider">
+
+            <div class="next"></div>
+
+                <div class="prev"></div>
+
+                    <div class="slides">
+                        <% @photos.each do |photo| %>
+                             <div class="slide">
+
+                             <img class="image_place" src="<%= photo[:source] %>">
+                                     
+                           </div>
+                        <% end %>
+                    </div>
+
+                </div>
+
+            </div>
         
-        <% @photos.each do |photo| %>
-        <img src="<%= photo[:source] %>">
-        <% end %>
-
-
     <!-- Page Content -->
     <div class="container">
 
@@ -48,3 +97,75 @@
                 <h2><a href='/users/<%= user.id %>'><%= user.firstname %> <%= user.lastname %></a></h2>
             </div>
             <% end %>
+
+
+<style>
+    
+body {
+    margin:0;
+    text-align:center;
+    }
+
+ 
+
+body .slider {
+
+    overflow:hidden;
+    position:relative;
+    width:800px;
+    height:500px;
+    margin:0 auto;
+
+    }
+ 
+body .slider .slides {
+
+    position:relative;
+    transition:1s;
+
+    }
+
+body .slider .slides .slide {
+
+    float:left;    
+    display:block;
+
+    }
+
+body .slider .slides .slide img{
+    
+    width:800px;
+    height:500px;
+
+    }
+
+ 
+body .slider .next {
+
+    position:absolute;
+    height:50px;
+    width:50px;
+    background:#009900;
+    right:0;
+    top:225px;
+    z-index:1;
+    cursor:pointer;
+
+    }
+
+ 
+body .slider .prev {
+
+    position:absolute;
+    height:50px;
+    width:50px;
+    background:#009900;
+    left:0;
+    top:225px;
+    z-index:1;
+    cursor:pointer;
+
+    }
+
+</style>
+
