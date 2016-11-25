@@ -13,18 +13,14 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-     <!-- Footer -->
-     <!--    <footer class='navbar-fixed-bottom'>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Second Shot 2016</p>
-                </div>
-            </div>
-        </footer> -->
-    </div>
+        <main role="main">
+           <%= render 'layouts/messages' %>
+        </div>
+    
      <%= yield %>
-    </main>
+        </main>
+      <footer>
+        <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
