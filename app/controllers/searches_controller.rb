@@ -9,6 +9,8 @@ class SearchesController < ApplicationController
   	@items = Foursquare.search(@term)
   	p @items
 	end
+
+	
   
 end
 

@@ -7,6 +7,11 @@
             </div>
         </div>
     </header>
+        
+        <% @photos.each do |photo| %>
+        <img src="<%= photo[:source] %>">
+        <% end %>
+
 
     <!-- Page Content -->
     <div class="container">

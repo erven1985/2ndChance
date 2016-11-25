@@ -48,6 +48,11 @@ end
 	def show 
 		 @place = Place.find(params[:id])
 	   @users = @place.users
+     @term = @place.site_id
+     p @term
+     @photos = Foursquare.searchPhoto(@term)
+     p "My result" 
+     p @photos
 	end
 
   def destroy
@@ -71,7 +76,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :address, :phone, :day, :month, :year, :time_from, :time_to)
+      params.require(:place).permit(:site_id, :name, :address, :phone, :day, :month, :year, :time_from, :time_to)
     end
 
 

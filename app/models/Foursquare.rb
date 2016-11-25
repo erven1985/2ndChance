@@ -24,10 +24,10 @@ def self.searchPhoto(id)
   
   uri = URI("https://api.foursquare.com/v2/venues/#{id}/photos?client_id=VABRDJEIIJRTEBT2RACFJFQTE5OCEI3TZ44IU0KFYAXHQOZT&client_secret=25FTBUGHO2VGUWMBC3AJL0SKTLW5D0FP3E1SZWV4I05FLOM4&v=20161118")
   p uri
-  photos = JSON.parse(Net::HTTP.get(uri))
-  all = photos["response"]["photos"].map do |r|
-  { placeImg: "#{r['items']['prefix']}300x300#{r['items']['suffix']}" } 
-  
+  response = JSON.parse(Net::HTTP.get(uri))
+  data = response["response"]["photos"]["items"].map do |r|
+  { source: "#{r["prefix"]}300x300#{r["suffix"]}" }
+
   end
 end
 	
