@@ -1,5 +1,89 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+
+
+<style>
+    
+body {
+    margin:0;
+    text-align:center;
+    }
+
+ 
+
+body .slider {
+
+    overflow:hidden;
+    position:relative;
+    width:800px;
+    height:500px;
+    margin:0 auto;
+
+    }
+ 
+body .slider .slides {
+
+    position:relative;
+    transition:1s;
+
+    }
+
+body .slider .slides .slide {
+
+    float:left;    
+    display:block;
+
+    }
+
+body .slider .slides .slide img{
+    
+    width:800px;
+    height:500px;
+
+    }
+
+ 
+body .slider .next {
+
+    position:absolute;
+    height:50px;
+    width:50px;
+    right:0;
+    top:225px;
+    z-index:1;
+    cursor:pointer;
+
+    }
+
+ 
+body .slider .prev {
+
+    position:absolute;
+    height:50px;
+    width:50px;
+    left:0;
+    top:225px;
+    z-index:1;
+    cursor:pointer;
+
+    }
+
+
+ body .slider .next img:hover  {
+    
+    opacity: 0.5;
+    
+    }   
+
+body .slider .prev img:hover  {
+    
+    opacity: 0.5;
+    
+    }   
+
+
+</style>
+
 <script>
    
     $(document).ready(function() { 
@@ -30,6 +114,7 @@
     });
 
 });
+
 </script>
 
  <header class="business-header">
@@ -44,9 +129,9 @@
 
         <div class="slider">
 
-            <div class="next"></div>
+            <div class="next"><img src="/images/next.png"></div>
 
-                <div class="prev"></div>
+                <div class="prev"><img src="/images/prev.png"></div>
 
                     <div class="slides">
                         <% @photos.each do |photo| %>
@@ -97,75 +182,3 @@
                 <h2><a href='/users/<%= user.id %>'><%= user.firstname %> <%= user.lastname %></a></h2>
             </div>
             <% end %>
-
-
-<style>
-    
-body {
-    margin:0;
-    text-align:center;
-    }
-
- 
-
-body .slider {
-
-    overflow:hidden;
-    position:relative;
-    width:800px;
-    height:500px;
-    margin:0 auto;
-
-    }
- 
-body .slider .slides {
-
-    position:relative;
-    transition:1s;
-
-    }
-
-body .slider .slides .slide {
-
-    float:left;    
-    display:block;
-
-    }
-
-body .slider .slides .slide img{
-    
-    width:800px;
-    height:500px;
-
-    }
-
- 
-body .slider .next {
-
-    position:absolute;
-    height:50px;
-    width:50px;
-    background:#009900;
-    right:0;
-    top:225px;
-    z-index:1;
-    cursor:pointer;
-
-    }
-
- 
-body .slider .prev {
-
-    position:absolute;
-    height:50px;
-    width:50px;
-    background:#009900;
-    left:0;
-    top:225px;
-    z-index:1;
-    cursor:pointer;
-
-    }
-
-</style>
-
