@@ -1,11 +1,24 @@
 class PlacesController < ApplicationController
 
 
-	  def create
+def create
     @user = current_user
-    @place = Place.new(place_params)
-    @user.places << @place
-    respond_to do |format|
+    @place = Place.find_or_create_by(place_params)
+  if @place.present? 
+      p @place
+      @place.users.push @user
+      # @user.places << @place
+      if @place.users 
+        redirect_to places_path, notice: 'Place was successfully added to your list.'
+      else 
+        redirect_to search_path
+      end
+  else
+      @place = Place.create(place_params)
+      @user.places << @place
+
+          respond_to do |format|
+    
       if @place.save
         format.html { redirect_to places_path, notice: 'Place was successfully created.' }
         format.json { render :show, status: :created, location: places_path }
@@ -15,13 +28,14 @@ class PlacesController < ApplicationController
       end
     end
   end
+end
 
 	def index
-	@user = current_user
-  @places = @user.places
-	  if params[:search]
+	    @user = current_user
+      @places = @user.places
+    if params[:search]
 	    @places = @places.search(params[:search]).order("created_at DESC")
-	  else
+    else
 	    @places = @places.all.order('created_at DESC')
 
     end
@@ -29,21 +43,20 @@ class PlacesController < ApplicationController
 			  marker.lat place.latitude
 			  marker.lng place.longitude
 	  	end	  
-		
 	end
 
 	def show 
-		@place = Place.find(params[:id])
-		@users = @place.users
+		 @place = Place.find(params[:id])
+	   @users = @place.users
 	end
 
-	  def destroy
-    @place = Place.find(params[:id])
-    @place.destroy
-    respond_to do |format|
-      format.html { redirect_to places_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  def destroy
+      @place = Place.find(params[:id])
+      @place.destroy
+        respond_to do |format|
+        format.html { redirect_to places_url, notice: 'User was successfully destroyed.' }
+        format.json { head :no_content }
+      end
   end
 
 
