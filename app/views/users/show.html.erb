@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- Page Content -->
+<div class="container">
+
+<header class="jumbotron hero-spacer">
+    <h1><%= @user.firstname%><%= @user.lastname%></h1>
+    <p>Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+    <%= image_tag @user.avatar.url(:thumb), class: "img-circle img-responsive img-center"  %>
+    <p><%= link_to 'Message', edit_user_registration_path, class: "btn btn-primary btn-large" %>
+    </p>
+</header>
+
+<hr>
+
+<!-- Title -->
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Last Visited Places</h3>
+    </div>
+</div>
+<!-- /.row -->
+    <% @places.each do |place| %>
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <div class="erven"><img src="#" alt=""></div>
+                    <div class="caption">
+                        <h3><%= place.name %></h3>
+                        <p><%= place.address %></p>
+                        <p><%= place.phone %></p>
+                        <p>
+                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    <% end %>
+</div>
+<!-- /.row -->
