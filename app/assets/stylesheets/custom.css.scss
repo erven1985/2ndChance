@@ -58,13 +58,23 @@ p {
 
 
 .hero-feature {
-	min-height: 430px;
+	min-height: 400px;
 }
 
 .caption {
-	min-height: 320px;
+	min-height: 330px;
 }
 
 .image_place {
 	display: inline-block;
 }
+
+main { 
+min-height: 800px;
+background-color: white;
+}
+
+.erven {
+  background-color: black;
+}
+

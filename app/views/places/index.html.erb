@@ -46,10 +46,10 @@
                     </div>
                 </div>
     </header>
-    <div class="form-group">
+    <div class="form-group search rounded">
     <%= form_tag(places_path, method: :get, id: "search-form") do %>
     	<%= text_field_tag :search, params[:search] %>
-    		<%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+    		<%= button_tag "Search", class: "btn btn-default" %>
     <% end %>
     </div>
 
@@ -67,7 +67,7 @@
                         <p><%= place.address %></p>
                         <p><%= place.phone %></p>
                         </address>
-                        <p>
+                        <p class="bottom_btns">
                         <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
                         <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-large" %>
                         </p>
@@ -85,3 +85,44 @@
 <% else %> 
     <p class="lead text-info">There are no chosen places in your list.</p>
 <% end %>
+
+
+<style>
+     
+    .search input { 
+        width: 280px;
+        outline: none;
+        padding:6px 15px 6px 30px;
+        margin-bottom: 20px;
+        background: url('/images/search.png') no-repeat 3px 6px; 
+        margin-left: 38%;
+    }
+    .rounded input { 
+        border-radius:15px; 
+        -moz-border-radius:15px; 
+        -webkit-border-radius:15px; 
+}
+
+    .btn-default {
+        width: 100px;
+        border-radius: 0px;
+    }
+
+    .btn-default:hover {
+        box-shadow: 0 0 2px grey;
+    }
+
+    .caption {
+        min-height: 230px;
+    }
+
+    .hero-feature {
+        min-height: 300px;
+    }
+
+    .bottom_btns {
+        position: absolute;
+        top: 200px;
+    }
+
+</style>

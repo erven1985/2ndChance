@@ -1,8 +1,8 @@
 <!-- Form for search -->
-<div class="form-group">
+<div class="form-group top_form search rounded">
 <%= form_tag search_path, method: :get do %>
 	<%= text_field_tag 'search' %>
-		<%= submit_tag "Search", class: "btn btn-primary btn-sm" %>
+		<%= button_tag"Search", class: "btn btn-default" %>
 <% end %>
 </div>
     
@@ -26,17 +26,31 @@
                         <%= f.hidden_field :name, :value => item[:name] %>
                         <%= f.hidden_field :address, :value => "#{item[:address1]}, #{item[:address2]}" %>
                         <%= f.hidden_field :phone, :value => item[:phone] %>
-                        <div class="form-group col-sm-5">
+                        <div class="container">
                         <%= f.label :date %>
-                            <%= f.select(:day, options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31].reverse), {:prompt => 'day'}, {:class => "form-control slct-box"}) %>
-                            <%= f.select(:month, options_for_select(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']), {:prompt => 'month'}, {:class => "form-control slct-box"}) %>
-                            <%= f.select(:year, options_for_select([1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020].reverse), {:prompt => 'year'}, {:class => "form-control slct-box"}) %>
-                        </div>
-                        <div class="form-group col-sm-7">
-                        <%= f.label :time %>
-                            <%= f.select(:time_from, options_for_select(['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'].reverse), {:prompt => 'Select from'}, {:class => "form-control slct-box"}) %>
-                            <%= f.select(:time_to, options_for_select(['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'].reverse), {:prompt => 'Select to'}, {:class => "form-control slct-box"}) %>
+                             <div class="row">
+                             <div class="col-sm-1">
+                                <%= f.select(:day, options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31].reverse), {:prompt => 'day'}, {:class => "form-control slct-box"}) %>
+                             </div>
+                              <div class="col-sm-1">
+                                 <%= f.select(:month, options_for_select(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']), {:prompt => 'month'}, {:class => "form-control slct-box"}) %>
+                              </div>
+                             <div class="col-sm-1">
+                                 <%= f.select(:year, options_for_select([1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020].reverse), {:prompt => 'year'}, {:class => "form-control slct-box"}) %> 
+                                </div>
                             </div>
+                        </div>
+                        <div class="container">
+                            <%= f.label :time %>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                 <%= f.select(:time_from, options_for_select(['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'].reverse), {:prompt => 'from'}, {:class => "form-control slct-box"}) %>
+                            </div>
+                            <div class="col-sm-1">
+                                 <%= f.select(:time_to, options_for_select(['1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'].reverse), {:prompt => 'to'}, {:class => "form-control slct-box"}) %>
+                                </div>
+                            </div>
+                        </div>
                                 <%= f.submit 'Save', :class => 'btn btn-primary btn-large' %>
                         <% end %>
                     </div>
@@ -46,5 +60,48 @@
     </div>
 </div>
 
+<style>
 
+    .col-sm-1 {
+       
+        margin-left: -10px;
+    
+    }
+
+    .btn-large {
+        width: 100px;
+        margin-top: 15px;
+        margin-left: 80px;
+    }
+
+    .top_form {
+
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 15px;
+    }
+    
+    .search input { 
+        width: 280px;
+        outline: none;
+        padding:6px 15px 6px 30px;
+        margin:3px; 
+        background: url('/images/search.png') no-repeat 3px 6px; 
+    }
+    .rounded input { 
+        border-radius:15px; 
+        -moz-border-radius:15px; 
+        -webkit-border-radius:15px; 
+    }
+
+    .btn-default {
+        width: 100px;
+        border-radius: 0px;
+    }
+
+    .btn-default:hover {
+        box-shadow: 0 0 2px grey;
+    }
+
+</style>
 

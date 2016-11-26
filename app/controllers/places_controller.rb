@@ -49,10 +49,7 @@ end
 		 @place = Place.find(params[:id])
 	   @users = @place.users
      @term = @place.site_id
-     p @term
      @photos = Foursquare.searchPhoto(@term)
-     p "My result" 
-     p @photos
 	end
 
   def destroy
