@@ -16,7 +16,7 @@ def self.search(term)
     address2: "#{r["location"]["city"]}, #{r["location"]["state"]}, #{r["location"]["postalCode"]}",
     distance: r["location"]["distance"],
     phone: r["contact"]["formattedPhone"]}
-  # logo: "#{r["categories"][0]["icon"]["prefix"]}88#{r["categories"][0]["icon"]["suffix"]}" }
+    # logo: "#{r["categories"][0]["icon"]["prefix"]}88#{r["categories"][0]["icon"]["suffix"]}" }
   end
 end
 

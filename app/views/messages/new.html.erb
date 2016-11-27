@@ -1,0 +1,39 @@
+<style>
+		
+		#form_text {
+			border-radius: 5px;
+			outline: none;
+			color: grey;
+
+		}
+		label {
+			position: absolute;
+			top: 72px;
+		}
+		.btn {
+			margin-top: 5px;
+			width: 100px;
+		}
+
+</style>
+
+
+<header class="jumbotron hero-spacer">
+	<%= form_for :message do |f| %>
+		<%= f.label :Message %>
+		   	<%= f.text_area :body, size: "60x8", id: "form_text" %><br />
+		    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
+    		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
+     <%= f.submit 'Submit', :class => 'btn btn-default' %>
+ <% end %>
+</header>
+
+<hr>
+
+
+<% @messages.each do |message| %> 
+	<%= message.body %><br>
+	<% end %> 
+	
+
+
