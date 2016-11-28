@@ -6,7 +6,7 @@ def create
     @place = Place.find_or_create_by(place_params)
   if @place.present? 
       p @place
-      @place.users.push @user
+      @place.users << @user
       # @user.places << @place
       if @place.users 
         redirect_to places_path, notice: 'Place was successfully added to your list.'
