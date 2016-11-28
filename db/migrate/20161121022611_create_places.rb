@@ -10,6 +10,7 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.integer :year
       t.string :time_to
       t.string :time_from
+      t.string :logo
       t.float :latitude
       t.float :longitude
 

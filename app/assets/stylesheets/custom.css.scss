@@ -62,7 +62,7 @@ p {
 }
 
 .caption {
-	min-height: 330px;
+	min-height: 340px;
 }
 
 .image_place {
@@ -75,6 +75,10 @@ background-color: white;
 }
 
 .erven {
-  background-color: black;
+  background-color: #2baebf;
 }
 
+.navbar.navbar-inverse.navbar-fixed-top {
+  background-color: #006699;
+  border-color: #006699;
+}

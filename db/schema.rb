@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20161125170825) do
     t.integer  "year"
     t.string   "time_to"
     t.string   "time_from"
+    t.string   "logo"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", null: false

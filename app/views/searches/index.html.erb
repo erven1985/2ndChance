@@ -6,11 +6,13 @@
 <% end %>
 </div>
     
-	<% @items.each do |item| %> 
+	<% @items.each do |item| 
+        next unless item
+        %> 
           <div class="clearfix">
             <div class="col-md-3 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <div class="erven"><img src="88"></div>
+                    <div class="erven"><img src="<%= item[:logo] %>"></div>
                     <div class="caption">
                         <address>
                         <strong><%= item[:name] %></strong></br>
@@ -26,6 +28,7 @@
                         <%= f.hidden_field :name, :value => item[:name] %>
                         <%= f.hidden_field :address, :value => "#{item[:address1]}, #{item[:address2]}" %>
                         <%= f.hidden_field :phone, :value => item[:phone] %>
+                        <%= f.hidden_field :logo, :value => item[:logo] %>
                         <div class="container">
                         <%= f.label :date %>
                              <div class="row">
@@ -70,7 +73,7 @@
 
     .btn-large {
         width: 100px;
-        margin-top: 15px;
+        margin-top: 25px;
         margin-left: 80px;
     }
 

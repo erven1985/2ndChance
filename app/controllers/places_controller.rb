@@ -73,7 +73,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:site_id, :name, :address, :phone, :day, :month, :year, :time_from, :time_to)
+      params.require(:place).permit(:site_id, :name, :address, :phone, :day, :month, :year, :time_from, :time_to, :logo)
     end
 
 
