@@ -80,8 +80,8 @@
         opacity: 0.5;
         
         }   
-    p {
-        float: left;
+    p, address, h2 {
+        text-align: left;
     }
 
 </style>
@@ -123,7 +123,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="tagline"><%= @place.name %></h1>
+                    <h3 class="tagline"><%= @place.name %></h3>
                 </div>
             </div>
         </div>
@@ -177,10 +177,20 @@
         <!-- /.row -->
 
         <hr>
-        <% @users.each do |user| %>
-        <div class="row">
-            <div class="col-sm-4">
-                <%= image_tag user.avatar.url(:medium), class: "img-circle img-responsive img-center" %>
-                <h2><a href='/users/<%= user.id %>'><%= user.firstname %> <%= user.lastname %></a></h2>
-            </div>
+        <% if @place.users.count <= 1 %>
+            Only you
+          <% elsif @place.users.count <= 2 %> 
+            You, and one other
+           <% else %> 
+            You, and <%= @place.users.count - 1%> others
+        <% end %>
+
+        <% @users.each do |user|
+            unless user.id == current_user.id %>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <%= image_tag user.avatar.url(:medium), class: "img-circle img-responsive img-center" %>
+                        <h4><a href='/users/<%= user.id %>'><%= user.firstname %> <%= user.lastname %></a></h4>
+                    </div>
             <% end %>
+        <% end %>

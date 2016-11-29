@@ -21,6 +21,6 @@ end
 	geocoded_by :address
 	after_validation :geocode
 
-	# validates :name, uniqueness: true, :on => :create
+	
 	
 end

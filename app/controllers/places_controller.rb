@@ -47,7 +47,7 @@ end
 
 	def show 
 		 @place = Place.find(params[:id])
-	   @users = @place.users #to do add validation date and time
+	   @users = @place.users
      @term = @place.site_id
      @photos = Foursquare.searchPhoto(@term)
 	end
