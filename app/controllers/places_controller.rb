@@ -51,14 +51,17 @@ end
 
   def destroy
       @place = Place.find(params[:id])
+      if @place.users.count == 1
       @place.destroy
         respond_to do |format|
-        format.html { redirect_to places_url, notice: 'User was successfully destroyed.' }
+        format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
         format.json { head :no_content }
       end
+      else 
+        @place.users.delete(User.find(current_user.id))
+        redirect_to places_path, notice: 'You successfully deleted your record!'
+      end
   end
-
-
 
 end
 
