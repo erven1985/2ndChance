@@ -4,16 +4,13 @@ class PlacesController < ApplicationController
 def create
     @user = current_user
     @place = Place.find_or_create_by(place_params)
-  if @place.present? 
-      p @place
+  if @place.users.where(id:current_user.id).present?
+      redirect_to places_path, notice: 'You already have this record'
+      
+    elsif @place.present? 
       @place.users << @user
-      # @user.places << @place
-      if @place.users 
-        redirect_to places_path, notice: 'Place was successfully added to your list.'
-      else 
-        redirect_to search_path
-      end
-  else
+      redirect_to places_path, notice: 'Place was successfully added to your list.'        
+    else
       @place = Place.create(place_params)
       @user.places << @place
 
