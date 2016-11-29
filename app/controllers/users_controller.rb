@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @places = @user.places
     @message = Message.new
+      if @user.dob
+         @birtday = @user.dob.gsub('/', ',').split(",")
+         @age = Date.current.year - @birtday[2].to_i
+      else 
+    end
   end
 
   def update 
