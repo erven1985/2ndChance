@@ -178,12 +178,12 @@
 
         <hr>
         <% if @place.users.count <= 1 %>
-            Only you
-          <% elsif @place.users.count <= 2 %> 
-            You, and one other
-           <% else %> 
-            You, and <%= @place.users.count - 1%> others
-        <% end %>
+                <p>Only you</p>
+            <% elsif @place.users.count <= 2 %> 
+                <p>You, and one other</p>
+                    <% else %> 
+                        <p>You, and <%= @place.users.count - 1%> others</p>
+                    <% end %>
 
         <% @users.each do |user|
             unless user.id == current_user.id %>
