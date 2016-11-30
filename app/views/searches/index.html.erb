@@ -15,7 +15,7 @@
                     <div class="erven"><img src="<%= item[:logo] %>"></div>
                     <div class="caption">
                         <address>
-                        <strong><%= item[:name] %></strong></br>
+                        <span><%= item[:name] %></span></br>
                             <%= item[:address1] %></br>
                             <%= item[:address2] %></br>
                             Phone: <%= item[:phone] %> 
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-                                <%= f.submit 'Save', :class => 'btn btn-primary btn-large' %>
+                                <input type="submit" value="" class="btn-save" style="background-image: url(/images/savelock.png);" />
                         <% end %>
                     </div>
                 </div>
@@ -64,19 +64,28 @@
 </div>
 
 <style>
-
+    body  {
+        overflow-x: hidden;
+    }
     .col-sm-1 {
-       
+     
         margin-left: -10px;
-    
     }
 
-    .btn-large {
-        width: 100px;
+    .btn-save {
+        width: 70px;     
+        height: 60px;
+        background-size: cover;    
         position: absolute;
-        top: 330px;
-        left: 110px;
+        top: 305px;
+        left: 210px;
+        background-color: #fff;
+        border-color: ;
+        border:0;
+        outline: none;
+        border-radius: 50%;
     }
+
 
     .top_form {
 
@@ -86,28 +95,57 @@
     }
     
     .search input { 
+     
         width: 280px;
         outline: none;
         padding:3px 10px 3px 10px;
         margin:3px; 
+        background-color: #fff;
         
     }
     .rounded input { 
+     
         border-radius:15px; 
         -moz-border-radius:15px; 
         -webkit-border-radius:15px; 
     }
 
     .btn-img {
+     
         background: url('/images/search.png') no-repeat 3px 12px;
         margin-top: 3px;
         width: 36px;
         height: 36px;
-        background-color: #fff;
+        background-image:;
         border-color: #fff;
         outline: none;
         border:0;
+
     }
 
+    .thumbnail {
+       
+        background: #fff;
+        display: block;
+        border-radius: 2px 2px 2px 2px;
+        box-shadow: 0 1px 4px
+         rgba(0, 0, 0, 0.3), 0 0 40px
+         rgba(0, 0, 0, 0.1) inset;
+
+    }
+
+
+    .caption span {
+        
+        font-size: 17px;
+        font-weight: bold;
+        margin-top: 5px; 
+        text-align: center; 
+        color: #ed551e;
+        text-transform: uppercase;
+    }
+
+    
 </style>
+
 
