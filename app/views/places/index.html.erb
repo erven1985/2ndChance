@@ -1,8 +1,16 @@
-
 <% if current_user.places.count > 0 %> 
      <header class="business-header">
-        <h3>Map</h3>
-             <div id="map"></div>
+             <div class="wrapper">
+                <div class="map" id="map"></div>
+                    <i class="top"></i>
+                    <i class="right"></i>
+                    <i class="bottom"></i>
+                    <i class="left"></i>
+                    <i class="top left"></i>
+                    <i class="top right"></i>
+                    <i class="bottom left"></i>
+                    <i class="bottom right"></i>
+                 </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -63,15 +71,16 @@
                     <div class="erven"><img src="<%= place.logo %>" alt=""></div>
                         <div class="caption">
                         <address>
-                        <h3><%= place.name %></h3>
+                        <span><%= place.name %></span>
                         <p><%= place.address %></p>
                         <p><%= place.phone %></p>
                         </address>
                         <p>Visited: <%= place.month %> <%= place.day %>, <%= place.year %> </p>
                         <p>From: <%= place.time_from %> to: <%= place.time_to %> </p>
+                        <p>People: <%= place.users.count %></p>
                         <p class="bottom_btns">
-                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
-                        <%= link_to 'Delete', place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-large" %>
+                        <%= link_to image_tag('/images/info.png'), place_path(place.id), class: "btn btn-default mybtn" %>
+                        <%= link_to  image_tag('/images/trash.png'), place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default mybtn2" %>
                         </p>
                     </div>
                 </div>
@@ -85,7 +94,7 @@
 <% end %>
 
 <% else %> 
-    <p class="lead text-info">There are no chosen places in your list.</p>
+    <p class="text-info">There are no chosen places in your list.</p>
 <% end %>
 
 
@@ -115,16 +124,29 @@
         outline: none;
         border:0;
     }
-    .btn-default, .btn-large {
-        width: 100px;
+    .btn-default {
+        margin-top: 20px;
+        margin-left: 40px;
         border-radius: 5px;
-        margin-left: 15px;
+        border:none !important;
+        outline: none !important;
+        background-color: transparent !important;
+
     }
 
+    
+     .btn-default img {
+        width: 80px;
+        height: auto;
+     }
 
-    .caption {
-        min-height: 300px;
-    }
+     .mybtn {
+        width: 59px;
+     }
+
+     .mybtn2 {
+        width: 70px;
+     }
 
     .hero-feature {
         min-height: 320px;
@@ -135,4 +157,10 @@
         top: 290px;
     }
 
+    .lead {
+        text-align: center;
+    }
+
+
 </style>
+

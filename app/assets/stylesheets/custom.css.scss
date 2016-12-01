@@ -1,5 +1,8 @@
 @import "bootstrap";
 
+body  {
+        overflow-x: hidden;
+    }
 
 html {
   overflow-y: scroll;
@@ -40,13 +43,13 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: #2b7177;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 13px;
   font-weight: bold;
   line-height: 1;
   text-decoration: none;
   text-shadow: 3px 3px 5px #51b1ba;
+  
 }
 
 
@@ -89,18 +92,15 @@ background-color: #8acace;
   height: 250px;
 }
 
-#map {
-  
-  width: 100%;
-  height: 450px;
-  margin-bottom: 30px;
-}
 
 .navbar.navbar-inverse.navbar-fixed-top a {
-  color: #a5eaef;
+  color: #2b7177;
   text-transform: uppercase;
+  font-weight: bold;
   font-size: 12px;
+  text-shadow: 3px 3px 5px #51b1ba;
 }
+
 
 .navbar-bottom {
 
@@ -115,3 +115,29 @@ background-color: #8acace;
 .navbar-bottom p {
   text-align: center;
 }
+
+
+ .thumbnail {
+       
+    background: #fff;
+    display: block;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 1px 4px
+     rgba(0, 0, 0, 0.3), 0 0 40px
+     rgba(0, 0, 0, 0.1) inset;
+         
+    }
+
+
+  .caption span {
+      
+      font-size: 17px;
+      font-weight: bold;
+      margin-top: 5px; 
+      text-align: center; 
+      color: #ed551e;
+      text-transform: uppercase;
+    }
+
+
+  
