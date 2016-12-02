@@ -6,7 +6,7 @@
     <p>Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
     <%= image_tag @user.avatar.url(:thumb), class: "img-circle img-responsive img-center"  %>
     Age: <%= @age %>
-    <p><%= link_to 'Message', new_message_path(@user.id), class: "btn btn-primary btn-large" %>
+    <p><%= link_to image_tag('/images/message.png'), new_message_path(@user.id), class: "btn_message" %>
     </p>
 </header>
 
@@ -51,5 +51,13 @@
 
     .hero-spacer {
         margin-bottom: 50px;
+    }
+
+    .btn_message img {
+        position: absolute;
+        width: 150px;
+        top: 465px;
+        right: 160px;
+        
     }
 </style>
