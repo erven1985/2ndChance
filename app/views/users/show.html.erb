@@ -3,11 +3,21 @@
 
 <header class="jumbotron hero-spacer">
     <h1><%= @user.firstname%> <%= @user.lastname%></h1>
-    <p>Bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-    <%= image_tag @user.avatar.url(:thumb), class: "img-circle img-responsive img-center"  %>
-    Age: <%= @age %>
+        <div class="container">
+        <div class="col-md-6">
+            <%= image_tag @user.avatar.url(:medium), class: "img-circle img-responsive img-center"  %>
+                
+        </div>
+        
+        <div class="col-md-6">
+            <p>Age: <%= @age %></p>
+            <p>Gender: <%= @user.gender %></p>
+            <p>Email: <%= @user.email %></p>
+        </div>
+
     <p><%= link_to image_tag('/images/message.png'), new_message_path(@user.id), class: "btn_message" %>
     </p>
+    </div>
 </header>
 
 <hr>
@@ -51,13 +61,15 @@
 
     .hero-spacer {
         margin-bottom: 50px;
+        width: 800px;
+        margin: 50px auto;
     }
 
     .btn_message img {
         position: absolute;
         width: 150px;
-        top: 465px;
-        right: 160px;
+        top: 399px;
+        right: 390px;
         
     }
 </style>

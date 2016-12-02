@@ -85,7 +85,7 @@
                 <p>From: <%= place.time_from %> to: <%= place.time_to %> </p>
                 <p>People: <%= place.users.count %></p>
                 <p class="bottom_btns">
-                    <%= link_to  image_tag('/images/trash.png'), place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default mybtn2" %>
+                    <%= link_to  image_tag('/images/trash.png'), place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn_mybtn2" %>
                 </p>
             </div>
         </div>
@@ -130,30 +130,11 @@
                 outline: none;
                 border:0;
             }
-            .btn-default {
-                margin-top: 10px;
-                margin-left: 75px;
-                border-radius: 5px;
-                border:none !important;
-                outline: none !important;
-                background-color: transparent !important;
-
-            }
-
-
-            .btn-default img {
-                width: 70px;
-                height: auto;
-            }
-
+     
             .hero-feature {
                 min-height: 320px;
             }
 
-            .bottom_btns {
-                position: absolute;
-                top: 290px;
-            }
 
             .lead, .text-info {
                 text-align: center;
