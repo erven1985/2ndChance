@@ -38,6 +38,24 @@ p {
   line-height: 1.7em;
 }
 
+.tagline {
+  
+  text-align:center;
+  color: #ed551e;
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.container #a {
+  margin-top: 80px;
+}
+
+.col-sm-4 h4 {
+  text-align: center;
+}
+
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -145,5 +163,14 @@ background-color: #8acace;
       text-transform: uppercase;
     }
 
+  .hero-spacer {
+    margin-top: 50px;
+    background-color: #fff;
+  }
 
-  
+  @media (max-width:1250px) {
+  .btn-save {
+    margin-left: -50px;
+    margin-top: 10px;
+  }
+}

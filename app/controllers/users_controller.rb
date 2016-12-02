@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 
   def profile 
     @places = current_user.places.last(4).reverse
+    @all = []
+    @messages = Message.where(sender_id:current_user.id)
+      @messages.each do |m|
+        @all.push(User.find(m.user_id))
+    end
+      @contacts = @all.last(6).reverse.uniq
   end
 
 
