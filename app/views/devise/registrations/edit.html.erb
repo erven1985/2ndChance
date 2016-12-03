@@ -1,8 +1,13 @@
+<style>
+  fieldset p, fieldset label {
+    color: #558C89;
+  }
+</style>
+
 <div class="authform">
-  <h3>Edit <%= resource_name.to_s.humanize %></h3>
+  <h3 id="editUser">Edit Profile</h3>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
-    <%= image_tag @user.avatar.url(:thumb) %>
     <div class="form-group">
       <%= f.label :firstname %>
       <%= f.text_field :firstname, autofocus: true, class: 'form-control' %>
@@ -55,11 +60,11 @@
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
     </fieldset>
-    <%= f.submit 'Update', :class => 'button right' %>
+    <%= f.submit 'Update', :class => 'btn btn-warning right' %>
   <% end %>
 </div>
 <div class="authform">
 <h3>Cancel Account</h3>
 <p>Unhappy? We'll be sad to see you go.</p>
-<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
+<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-warning right' %>
 </div>

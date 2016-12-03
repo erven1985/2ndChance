@@ -3,14 +3,15 @@
 
 <header class="jumbotron hero-spacer">
   <% if signed_in? %>
-		<h1>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
+		<h3>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h3>
 	<% else %>
 <% end %>
     <blockquote>
         <p>My whole story is just about me having a second chance.</p>
-            <footer>Two Chainz</footer>
+            <footer id="author">Two Chainz</footer>
     </blockquote>
-    <p><%= link_to 'Edit account', edit_user_registration_path, class: "btn btn-success btn-large" %>
+        <div class="frame profile"><%= image_tag current_user.avatar.url(:thumb) %></div>
+    <p><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning btn-large" %>
     </p>
 </header>
 
@@ -23,11 +24,11 @@
     </div>
 </div>
 <!-- /.row -->
-    <% @contacts.each do |m| %>
-         <div class="row">
-                    <div class="col-sm-4">
-                        <%= image_tag m.avatar.url(:medium), class: "img-circle img-responsive img-center" %>
-                        <h4><a href='/users/<%= m.id %>'><%= m.firstname %> <%= m.lastname %></a></h4>
+    <div class="row">
+        <% @contacts.each do |m| %> 
+                    <div class="col-sm-2">
+                        <div class="img-fiends"><%= image_tag m.avatar.url, class: "img_bottom" %></div>
+                        <a href='/users/<%= m.id %>'><%= m.firstname %> <%= m.lastname %></a>
                     </div>
             <% end %>
         </div>
@@ -40,14 +41,40 @@
         min-height: 230px;
     }
 
-    .btn-default {
+    .btn-warning {
         position: absolute;
-        top: 220px;
-        right: 110px;
+        top: 340px;
+        right: 125px;
     }
 
     .hero-spacer {
-        margin-bottom: 50px;
+        margin-bottom: 10px;
+        min-height: 300px;
     }
 
+
+    h3, p, a, #author {
+        color: #ECECEA;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+    h3 {
+        text-align: center;
+    }
+    a {
+        margin-left: 23px;
+    }
+
+    .img-fiends {
+      width: 150px;
+      height: 170px;
+      background-color: #fff;
+    
+    }
+
+    .img-fiends img {
+      width: 130px;
+      height: 160px;
+      padding-top: 10px;
+    }
+    
 </style>

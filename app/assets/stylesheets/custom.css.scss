@@ -12,6 +12,9 @@ section {
   overflow: auto;
 }
 
+address, select, label {
+  font-family: 'Merriweather Sans', sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -59,13 +62,14 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.9em;
   letter-spacing: -1px;
   padding-top: 13px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.1;
   text-decoration: none;
-  color: #fff;
+  color: #ECECEA;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 
@@ -89,23 +93,22 @@ p {
 
 main {
 min-height: 700px;
-background-color: #8acace;
+background-color: #74AFAD;
 }
 
 .erven {
-  background-color: #2baebf;
+  background-color: #558C89;
   border-radius: 7px 7px 0px 0px;
 }
 
 .linkone:hover {
-  background-color: #200877;
+  background-color: #D9853B;
   cursor: pointer;
-  opacity: 0.8;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top {
-  background-color: #2baebf;
-  border-color: #2baebf;  
+  background-color: #558C89;
+  border-color: #558C89;  
 }
 
 
@@ -116,27 +119,27 @@ background-color: #8acace;
 
 
 .navbar.navbar-inverse.navbar-fixed-top a {
-  // text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
-  color: #fff;
+  color: #ECECEA;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top a:hover {
-  color:#2b7177;
-  text-shadow: 1px 0px 1px #51b1ba;
+  color:#fff;
 }
 
 
 
 .navbar-bottom {
 
-  background-color: #2baebf;
-  border-color: #2baebf;  
+  background-color: #558C89;
+  border-color: #558C89;  
   padding-top: 14px;
-  color: #fff;
+  color: #ECECEA;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 13px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .navbar-bottom p {
@@ -168,13 +171,14 @@ background-color: #8acace;
       font-weight: bold;
       margin-top: 5px; 
       text-align: center; 
-      color: #ed551e;
+      color: #D9853B;
       text-transform: uppercase;
+      font-family: 'Merriweather Sans', sans-serif;
     }
 
   .hero-spacer {
     margin-top: 50px;
-    background-color: #fff;
+    background-color: #558C89;
   }
 
 
@@ -227,7 +231,43 @@ background-color: #8acace;
       z-index:-2;
     }
 
-      
+    .frame.profile {
+      width: 150px;
+      height: 170px;
+      position: absolute;
+      background-color: #fff;
+      right: 100px;
+      top: 160px;
+    }
+
+    .frame.profile img {
+      width: 130px;
+      height: 150px;
+    }
+
+
+      .authform {
+    margin-top: 10%;
+    font-family: 'Merriweather Sans', sans-serif;
+  }
+
+  form#new_user.new_user, form#edit_user.edit_user, form.button_to {
+    background-color: #558C89;
+    border-color: #558C89;
+    color:#ECECEA;
+  }
+
+
+  form#new_user.new_user  a {
+    color:#ECECEA; 
+  }
+
+  .btn-warning {
+    background-color: #D9853B;
+    border-color: #D9853B;
+  }
+
+
   @media (max-width:1250px) {
   .btn-save {
     margin-left: -50px;
