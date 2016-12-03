@@ -17,11 +17,13 @@
 
 		.blok {
 			position:relative;
-			width:40%;
+			width:80%;
 			padding:1em;
-			margin:2em 10px 4em;
+			margin:1em 10px 1em;
 			background:#fff;
-			box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+			box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 
+									0 1px 4px rgba(0, 0, 0, 0.3), 
+									0 0 40px rgba(0, 0, 0, 0.1) inset;
 			border-radius: 10px;
 		}
 
@@ -36,6 +38,12 @@
 			font-size:16px;
 			font-weight:bold;
 			
+		}
+
+		h2 {
+			font-size: 15px;
+			margin: 2px auto;
+			float: right;
 		}
 
 </style>
@@ -53,10 +61,32 @@
 
 <hr>
 
+	<div class="container">
+<!-- sent messages -->
+			<div class="col-md-6">
+						<p>Sent:</p>
+								<% @sent.each do |s| %> 
+											<div class="blok">
+													<p><%= s.body %></p><br>
+															<% User.where(id: s.user_id).each do |u| %>
+																<%= u.firstname %> <%= u.lastname %>
+																<% end %>
+															<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
+											</div>
+								<% end %> 
+			</div>
+<!-- received messages -->
+			<div class="col-md-6">
+							<p>Received:</p>
+									<% @received.each do |r| %> 
+											<div class="blok">
+													<p><%= r.body %></p><br>
+													<% User.where(id: r.sender_id).each do |u| %>
+																<%= u.firstname %> <%= u.lastname %>
+																<% end %>
+														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
+											</div>
+									<% end %> 
+			</div>
 
-<% @messages.each do |message| %> 
-	<div class="blok"><%= message.body %></div><br>
-	<% end %> 
-	
-
-
+	</div>

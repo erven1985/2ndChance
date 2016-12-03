@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
 		@current_user = current_user
 		@user = User.find(params[:user_id])
 		@message = @user.messages.build
-		@messages = Message.all
+		@sent = Message.where(sender_id: current_user.id).last(10).reverse
+		@received = Message.where(user_id: current_user.id).last(10).reverse
 		
 	end
 
