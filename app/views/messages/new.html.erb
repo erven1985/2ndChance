@@ -25,7 +25,21 @@
 		}
 
 </style>
+<script>
+		$(document).ready();
 
+		function refresh() {
+			setTimeout( function(){
+					
+					location.reload();
+			
+					refresh();
+
+			}, 1000);
+		}
+
+
+</script>
 
 <header class="jumbotron hero-spacer">
 	<%= form_for :message do |f| %>
@@ -39,7 +53,7 @@
 
 <hr>
 
-	<div class="container">
+	<div class="container" id="refresh">
 <!-- sent messages -->
 			<div class="col-md-6">
 						<p>Sent:</p>
