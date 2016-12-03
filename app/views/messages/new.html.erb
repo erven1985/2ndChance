@@ -1,5 +1,7 @@
 <style>
-		
+		main {
+			background-color: #fff;
+		}
 		#form_text {
 			border-radius: 5px;
 			outline: none;
@@ -15,35 +17,14 @@
 			width: 100px;
 		}
 
-		.blok {
-			position:relative;
-			width:80%;
-			padding:1em;
-			margin:1em 10px 1em;
-			background:#fff;
-			box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 
-									0 1px 4px rgba(0, 0, 0, 0.3), 
-									0 0 40px rgba(0, 0, 0, 0.1) inset;
-			border-radius: 10px;
-		}
-
-		.blok:before,
-		.blok:after {
-			content:"";
-			position:absolute;
-			z-index:-2;
-		}
-
-		.blok {
-			font-size:16px;
-			font-weight:bold;
-			
-		}
-
 		h2 {
 			font-size: 15px;
 			margin: 2px auto;
 			float: right;
+		}
+
+		.hero-spacer {
+			box-shadow: 1px 2px 3px 1px grey;
 		}
 
 </style>
@@ -66,7 +47,7 @@
 			<div class="col-md-6">
 						<p>Sent:</p>
 								<% @sent.each do |s| %> 
-											<div class="blok">
+											<div class="blok_left">
 													<p><%= s.body %></p><br>
 															<% User.where(id: s.user_id).each do |u| %>
 																<%= u.firstname %> <%= u.lastname %>
@@ -79,7 +60,7 @@
 			<div class="col-md-6">
 							<p>Received:</p>
 									<% @received.each do |r| %> 
-											<div class="blok">
+											<div class="blok_right">
 													<p><%= r.body %></p><br>
 													<% User.where(id: r.sender_id).each do |u| %>
 																<%= u.firstname %> <%= u.lastname %>
