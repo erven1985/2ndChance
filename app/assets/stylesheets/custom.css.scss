@@ -1,7 +1,9 @@
+
 @import "bootstrap";
 
 body  {
         overflow-x: hidden;
+        font-family: 'Merriweather Sans', sans-serif;
     }
 
 html {
@@ -10,10 +12,6 @@ html {
 
 section {
   overflow: auto;
-}
-
-address, select, label {
-  font-family: 'Merriweather Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,8 +42,7 @@ p {
 .tagline {
   
   text-align:center;
-  color: #ed551e;
-  text-transform: uppercase;
+  color: #ECECEA;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -69,7 +66,6 @@ p {
   line-height: 1.1;
   text-decoration: none;
   color: #ECECEA;
-  font-family: 'Merriweather Sans', sans-serif;
 }
 
 
@@ -122,11 +118,10 @@ background-color: #74AFAD;
   font-weight: bold;
   font-size: 12px;
   color: #ECECEA;
-  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top a:hover {
-  color:#fff;
+  text-decoration: underline;
 }
 
 
@@ -139,7 +134,6 @@ background-color: #74AFAD;
   color: #ECECEA;
   text-transform: uppercase;
   font-size: 13px;
-  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .navbar-bottom p {
@@ -173,7 +167,6 @@ background-color: #74AFAD;
       text-align: center; 
       color: #D9853B;
       text-transform: uppercase;
-      font-family: 'Merriweather Sans', sans-serif;
     }
 
   .hero-spacer {
@@ -195,12 +188,14 @@ background-color: #74AFAD;
       width: 250px;
       height: 250px;
       padding: 10px 10px;
-      box-shadow: 1px 1px 3px 1px grey;
+      background-color: #ECECEA;
+      border-radius: 10px;
     }
 
     .frame img {
       width: 230px;
       height: 230px;
+      border-radius: 3px;
     }
 
       .blok_left, .blok_right {
@@ -235,7 +230,8 @@ background-color: #74AFAD;
       width: 150px;
       height: 170px;
       position: absolute;
-      background-color: #fff;
+      background-color: #ECECEA;
+      border-radius: 10px;
       right: 100px;
       top: 160px;
     }
@@ -243,13 +239,14 @@ background-color: #74AFAD;
     .frame.profile img {
       width: 130px;
       height: 150px;
+      border-radius: 2px;
     }
 
 
-      .authform {
-    margin-top: 10%;
-    font-family: 'Merriweather Sans', sans-serif;
-  }
+    .authform {
+      margin-top: 10%;
+  
+    }
 
   form#new_user.new_user, form#edit_user.edit_user, form.button_to {
     background-color: #558C89;
@@ -266,6 +263,34 @@ background-color: #74AFAD;
     background-color: #D9853B;
     border-color: #D9853B;
   }
+
+  #plname {
+    color: #ECECEA;
+  }
+
+  #quoteone, .count_people, .col-md-6 {
+    color: #ECECEA;
+    margin: 1px auto;
+    line-height: 1.8;
+  }
+
+
+    .img-fiends {
+      width: 150px;
+      height: 170px;
+      background-color: #ECECEA;
+      border-radius: 10px;
+    
+    }
+
+    .img-fiends img {
+      width: 130px;
+      height: 160px;
+      padding-top: 10px;
+      border-radius: 2px;
+    }
+
+
 
 
   @media (max-width:1250px) {

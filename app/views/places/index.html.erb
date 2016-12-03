@@ -83,7 +83,7 @@
                 </address>
                 <p>Visited: <%= place.month %> <%= place.day %>, <%= place.year %> </p>
                 <p>From: <%= place.time_from %> to: <%= place.time_to %> </p>
-                <p>People: <%= place.users.count %></p>
+                <p>People: <%= place.users.count - 1 %></p>
                 <p class="bottom_btns">
                     <%= link_to  image_tag('/images/trash.png'), place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn_mybtn2" %>
                 </p>

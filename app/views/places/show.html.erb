@@ -1,7 +1,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 
-
 <style>
         
     body {
@@ -161,17 +160,14 @@
 
         <div class="row">
             <div class="col-sm-8">
-                <h2>What We Do</h2>
-                <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
+                <h3 id="quoteone">Sometimes you need a Second Chance, because you weren't quite ready for the first.</h3>
                 <p>
-                    <a class="btn btn-default btn-lg" href="/places">Back &raquo;</a>
+                    <a class="btn btn-warning btn-lg" href="/places">Back &raquo;</a>
                 </p>
             </div>
             <div class="col-sm-4">
-                <h2>Contact Us</h2>
                 <address>
-                    <strong><%= @place.name %></strong><br>
+                    <strong id="plname"><%= @place.name %></strong><br>
                     <br><%= @place.address %>
                 </address>
                 <address>
@@ -183,11 +179,11 @@
 
         <hr>
         <% if @place.users.count <= 1 %>
-                <p>Only you</p>
+                <p class="count_people">Only you</p>
             <% elsif @place.users.count <= 2 %> 
-                <p>You, and one other</p>
+                <p class="count_people">You, and one other</p>
                     <% else %> 
-                        <p>You, and <%= @place.users.count - 1%> others</p>
+                        <p class="count_people">You, and <%= @place.users.count - 1%> others</p>
                     <% end %>
 
         <% @users.each do |user|
