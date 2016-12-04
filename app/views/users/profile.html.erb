@@ -10,9 +10,10 @@
         <p>My whole story is just about me having a second chance.</p>
             <footer id="author">Two Chainz</footer>
     </blockquote>
-        <div class="frame profile"><%= image_tag current_user.avatar.url(:thumb) %></div>
+        <div class="frame profile"><%= image_tag current_user.avatar.url(:thumb) %>
     <p><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning btn-large" %>
     </p>
+    </div>
 </header>
 
 <hr>
@@ -42,14 +43,15 @@
     }
 
     .btn-warning {
-        position: absolute;
-        top: 340px;
-        right: 175px;
+  
+        margin-top: 20px;
+        margin-left: 25px;
     }
 
     .hero-spacer {
         margin-bottom: 10px;
         min-height: 300px;
+        position: relative;
     }
 
 
