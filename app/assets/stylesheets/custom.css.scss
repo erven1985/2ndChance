@@ -68,6 +68,9 @@ p {
   color: #ECECEA;
 }
 
+#logo:hover {
+  opacity: 0.8;
+}
 
 .nav {
 	float: right;
@@ -265,7 +268,7 @@ background-color: #74AFAD;
   }
 
 
-  form#new_user.new_user  a {
+  form#new_user.new_user  a, .image_bottom a {
     color:#ECECEA; 
   }
 
