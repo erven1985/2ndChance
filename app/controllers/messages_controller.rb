@@ -10,6 +10,9 @@ class MessagesController < ApplicationController
 		
 	end
 
+def show 
+		 @message = Message.find(params[:id])
+ 	end	
 
 def create
 	@message = Message.new(message_params)
@@ -19,6 +22,13 @@ def create
 	else 
 		redirect_to new_message_path, :alert => "Sorry, message can't be empty."
 	end
+end
+
+
+def destroy 
+	@message = Message.find(params[:id])
+	@message.destroy
+	render json: { success: true }
 end
 
 

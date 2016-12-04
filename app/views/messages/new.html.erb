@@ -23,7 +23,7 @@
 </style>
 
 <header class="jumbotron hero-spacer">
-	<%= form_for :message do |f| %>
+	<%= form_for :message, remote: true do |f| %>
 		   	<%= f.text_area :body, size: "60x8", id: "form_text", placeholder: "Please, enter your message" %><br />
 		    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
     		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
@@ -38,9 +38,11 @@
 			<div class="col-md-6">
 						<p>Sent:</p>
 								<% @sent.each do |s| %> 
-											<div class="blok_left">
-													<p><%= s.body %></p><br>
-															<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
+											<div class="blok_left" data-message_id="<%= s.id %>">
+													<p><%= s.body %>
+														<i class="fa fa-times delete" aria-hidden="true"></i>
+													</p><br>
+													<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
 											</div>
 								<% end %> 
 			</div>
