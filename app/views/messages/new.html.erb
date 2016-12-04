@@ -16,23 +16,18 @@
 
 		h2 {
 			font-size: 15px;
-			margin: 2px auto;
+			margin: -10px auto;
 			float: right;
-		}
-
-		.hero-spacer {
-			box-shadow: 1px 2px 3px 1px grey;
 		}
 
 </style>
 
 <header class="jumbotron hero-spacer">
 	<%= form_for :message do |f| %>
-		<%= f.label :Message %>
-		   	<%= f.text_area :body, size: "60x8", id: "form_text" %><br />
+		   	<%= f.text_area :body, size: "60x8", id: "form_text", placeholder: "Please, enter your message" %><br />
 		    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
     		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
-     <%= f.submit 'Submit', :class => 'btn btn-default' %>
+     <%= f.submit 'Send', :class => 'btn btn-warning' %>
  <% end %>
 </header>
 
@@ -45,9 +40,6 @@
 								<% @sent.each do |s| %> 
 											<div class="blok_left">
 													<p><%= s.body %></p><br>
-															<% User.where(id: s.user_id).each do |u| %>
-																<%= u.firstname %> <%= u.lastname %>
-																<% end %>
 															<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
 											</div>
 								<% end %> 
@@ -58,9 +50,6 @@
 									<% @received.each do |r| %> 
 											<div class="blok_right">
 													<p id="getfrom"><%= r.body %></p><br>
-													<% User.where(id: r.sender_id).each do |u| %>
-																<%= u.firstname %> <%= u.lastname %>
-																<% end %>
 														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
 											</div>
 									<% end %> 

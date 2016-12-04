@@ -35,11 +35,11 @@
                 <div class="thumbnail">
                     <div class="erven"><img src="<%= place.logo %>" alt=""></div>
                     <div class="caption">
-                        <h3><%= place.name %></h3>
+                        <span><%= place.name %></span>
                         <p><%= place.address %></p>
                         <p><%= place.phone %></p>
                         <p>
-                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-default" %>
+                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-warning" %>
                         </p>
                     </div>
                 </div>
@@ -53,16 +53,21 @@
         min-height: 230px;
     }
 
-    .btn-default {
+    .btn-warning {
         position: absolute;
         top: 220px;
-        right: 110px;
+        right: 105px;
     }
 
     .hero-spacer {
         margin-bottom: 50px;
         width: 800px;
         margin: 50px auto;
+    }
+
+    h3 {
+        color: #ECECEA;
+        text-align: center;
     }
 
 </style>
