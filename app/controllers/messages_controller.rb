@@ -16,6 +16,8 @@ def create
 	@message.save
 	if @message.save
 		redirect_to new_message_path
+	else 
+		redirect_to new_message_path, :alert => "Sorry, message can't be empty."
 	end
 end
 

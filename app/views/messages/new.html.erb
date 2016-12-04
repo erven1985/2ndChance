@@ -25,21 +25,6 @@
 		}
 
 </style>
-<script>
-		$(document).ready();
-
-		function refresh() {
-			setTimeout( function(){
-					
-					window.location.reload();
-			
-					refresh();
-
-			}, 1000);
-		}
-
-
-</script>
 
 <header class="jumbotron hero-spacer">
 	<%= form_for :message do |f| %>
@@ -72,7 +57,7 @@
 							<p>Received:</p>
 									<% @received.each do |r| %> 
 											<div class="blok_right">
-													<p><%= r.body %></p><br>
+													<p id="getfrom"><%= r.body %></p><br>
 													<% User.where(id: r.sender_id).each do |u| %>
 																<%= u.firstname %> <%= u.lastname %>
 																<% end %>
