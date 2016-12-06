@@ -31,6 +31,14 @@ def destroy
 	render json: { success: true }
 end
 
+def index
+	@messages = Message.where(user_id: current_user.id)
+end
+
+def received
+	@received = Message.where(user_id: current_user.id, sender_id: params[:user_id], created_at: (Time.now - 30.seconds)..Time.now)
+	render :json => @received||[]
+end
 
 private 
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 	get '/messages/new/:user_id'    => 'messages#new', as: 'new_message'
 	post '/messages/new/:user_id'   => 'messages#create'
 	
+	get '/messages/received/:user_id'     => 'messages#received'
 
   resources :users
   resources :places

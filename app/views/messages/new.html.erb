@@ -28,10 +28,15 @@
     }
     
 </style>
+
+<script type="text/javascript" src="/assets/dateformat.js"></script>
 <script>
+	 // var dateFormat = require('dateformat');
 			$(document).ready( function() {
 
 			messageDelete();
+			setInterval(refreshMessages,30000);
+			// refreshMessages();
 		});
 
 
@@ -53,6 +58,30 @@
 				};
 			});
 
+		}
+
+
+		// 	var result = '<%= @received %>';
+		function refreshMessages() {
+			console.log("refreshing...");
+			$.ajax ({
+				url: '/messages/received/<%= params[:user_id] %>',
+				type: 'GET', 
+				dataType:"json",
+				success: function(result) {
+					console.log("got result:",result);
+					if( result && result.length ) {
+						result.forEach( function(c,i) {
+							$("#received").prepend(`
+								<div id="received" class="blok_right">
+									<p id="getfrom">${c.body}</p><br>
+														<h2>${dateFormat(new Date(c.created_at),"dddd, mmmm dS, yyyy h:mm TT")}</h2>
+								</div>`)
+						})
+						
+					}
+				}
+			});
 		}
 </script>
 
@@ -83,12 +112,14 @@
 <!-- received messages -->
 			<div class="col-md-6">
 							<p>Received:</p>
+								<div id="received">
 									<% @received.each do |r| %> 
 											<div class="blok_right">
 													<p id="getfrom"><%= r.body %></p><br>
 														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
 											</div>
 									<% end %> 
+								</div>
 			</div>
 
 	</div>
