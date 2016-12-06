@@ -43,8 +43,8 @@ p {
   
   text-align:center;
   color: #ECECEA;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 85px;
+  margin-bottom: 30px;
 }
 
 .container #a {
@@ -91,7 +91,7 @@ p {
 }
 
 main {
-min-height: 610px;
+min-height: 705px;
 background-color: #74AFAD;
 }
 
@@ -272,6 +272,11 @@ background-color: #74AFAD;
     color:#ECECEA; 
   }
 
+  .image_bottom a {
+    margin-left: -35%;
+  }
+
+
   .btn-warning {
     background-color: #D9853B;
     border-color: #D9853B;
@@ -287,6 +292,9 @@ background-color: #74AFAD;
     line-height: 1.8;
   }
 
+  .count_people {
+    margin-bottom: 10px;
+  }
 
     .img-fiends {
       width: 150px;

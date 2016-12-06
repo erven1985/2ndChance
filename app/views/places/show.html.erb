@@ -90,6 +90,7 @@
     .btn-warning {
         margin-top: 40px;
     }
+    
 
 </style>
 
@@ -193,7 +194,7 @@
             unless user.id == current_user.id %>
                 <div class="row">
                     <div class="col-sm-4">
-                        <%= image_tag user.avatar.url(:medium), class: "img-circle img-responsive img-center" %>
+                        <%= image_tag user.avatar.url(:medium), class: "img-circle img-responsive img-center img-thumbnail" %>
                         <h4 class="image_bottom"><a href='/users/<%= user.id %>'><%= user.firstname %> <%= user.lastname %></a></h4>
                     </div>
             <% end %>
