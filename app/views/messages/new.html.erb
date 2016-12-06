@@ -31,12 +31,11 @@
 
 <script type="text/javascript" src="/assets/dateformat.js"></script>
 <script>
-	 // var dateFormat = require('dateformat');
+
 			$(document).ready( function() {
 
 			messageDelete();
-			setInterval(refreshMessages,30000);
-			// refreshMessages();
+			setInterval(refreshMessages,3000);
 		});
 
 
@@ -60,8 +59,6 @@
 
 		}
 
-
-		// 	var result = '<%= @received %>';
 		function refreshMessages() {
 			console.log("refreshing...");
 			$.ajax ({

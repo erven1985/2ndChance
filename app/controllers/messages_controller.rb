@@ -36,7 +36,7 @@ def index
 end
 
 def received
-	@received = Message.where(user_id: current_user.id, sender_id: params[:user_id], created_at: (Time.now - 30.seconds)..Time.now)
+	@received = Message.where(user_id: current_user.id, sender_id: params[:user_id], created_at: (Time.now - 3.seconds)..Time.now).last(10).reverse
 	render :json => @received||[]
 end
 
