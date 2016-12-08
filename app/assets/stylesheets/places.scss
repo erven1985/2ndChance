@@ -7,13 +7,13 @@ $thickness: 5px;
 $border-color: rgba(black, 0.15);
 $background-color: #74AFAD;;
 
-.wrapper {
-  position: relative;
-  width: 91%;
-  height: 450px;
-  overflow: hidden;
-  margin: 50px;
-  margin-top: 70px;
+  .wrapper {
+    position: relative;
+    width: 91%;
+    height: 450px;
+    overflow: hidden;
+    margin: 50px;
+    margin-top: 70px;
 
   & > i {
     display: block;
@@ -96,9 +96,9 @@ $background-color: #74AFAD;;
     &.bottom.left {
       border-bottom-left-radius: $radius;
       &:after { border-bottom-left-radius: 1.5*$radius; }
+      }
     }
   }
-}
 
     #map {
       

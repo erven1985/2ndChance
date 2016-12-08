@@ -1,41 +1,10 @@
-<style>
-		#form_text {
-			border-radius: 5px;
-			outline: none;
-			color: grey;
-
-		}
-		label {
-			position: absolute;
-			top: 72px;
-		}
-		.btn {
-			margin-top: 5px;
-			width: 100px;
-		}
-
-		h2 {
-			font-size: 15px;
-			margin: -10px auto;
-			float: right;
-		}
-
-
-    .hero-spacer {
-        margin-bottom: 50px;
-        width: 800px;
-        margin: 50px auto;
-    }
-    
-</style>
 
 <script type="text/javascript" src="/assets/dateformat.js"></script>
 <script>
 
 			$(document).ready( function() {
-
-			messageDelete();
-			setInterval(refreshMessages,3000);
+					messageDelete();
+					setInterval(refreshMessages,3000);
 		});
 
 
@@ -49,18 +18,17 @@
 						type: 'DELETE',
 						data: { method: 'DELETE' },
 						success: function(result) {
-							$(current_message_div).fadeOut(200);
-							console.log(result);
-						}
-					});
+											$(current_message_div).fadeOut(200);
+												console.log(result);
+											}
+									});
 
-				};
-			});
+								};
+						});
 
-		}
+					}
 
 		function refreshMessages() {
-			console.log("refreshing...");
 			$.ajax ({
 				url: '/messages/received/<%= params[:user_id] %>',
 				type: 'GET', 
@@ -82,12 +50,44 @@
 		}
 </script>
 
+<style>
+		#form_text {
+			border-radius: 5px;
+			outline: none;
+			color: grey;
+		}
+
+		label {
+			position: absolute;
+			top: 72px;
+		}
+
+		.btn {
+			margin-top: 5px;
+			width: 100px;
+		}
+
+		h2 {
+			font-size: 15px;
+			margin: -10px auto;
+			float: right;
+		}
+
+    .hero-spacer {
+        margin-bottom: 50px;
+        width: 800px;
+        margin: 50px auto;
+    }
+    
+</style>
+
+
 <header class="jumbotron hero-spacer">
 	<%= form_for :message, remote: true do |f| %>
 		   	<%= f.text_area :body, size: "60x8", id: "form_text", placeholder: "Please, enter your message" %><br />
-		    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
+	    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
     		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
-     <%= f.submit 'Send', :class => 'btn btn-warning' %>
+     		<%= f.submit 'Send', :class => 'btn btn-warning' %>
  <% end %>
 </header>
 
@@ -116,7 +116,7 @@
 														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
 											</div>
 									<% end %> 
-								</div>
+							</div>
 			</div>
 
 	</div>

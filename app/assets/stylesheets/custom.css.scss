@@ -2,9 +2,9 @@
 @import "bootstrap";
 
 body  {
-        overflow-x: hidden;
-        font-family: 'Merriweather Sans', sans-serif;
-    }
+  overflow-x: hidden;
+  font-family: 'Merriweather Sans', sans-serif;
+}
 
 html {
   overflow-y: scroll;
@@ -76,8 +76,6 @@ p {
 	float: right;
 }
 
-
-
 .hero-feature {
 	min-height: 400px;
 }
@@ -110,12 +108,10 @@ background-color: #74AFAD;
   border-color: #558C89;  
 }
 
-
 .img-circle {
   width: 230px;
   height: 230px;
 }
-
 
 .navbar.navbar-inverse.navbar-fixed-top a {
   font-weight: bold;
@@ -126,8 +122,6 @@ background-color: #74AFAD;
 .navbar.navbar-inverse.navbar-fixed-top a:hover {
   text-decoration: underline;
 }
-
-
 
 .navbar-bottom {
 
@@ -144,183 +138,180 @@ background-color: #74AFAD;
 }
 
 
- .thumbnail {
-       
-    background: #fff;
-    display: block;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0 1px 4px
-     rgba(0, 0, 0, 0.3), 0 0 40px
-     rgba(0, 0, 0, 0.1) inset;
-    }
+.thumbnail {
 
-  .btn_mybtn2 {
-    width: 70px;
-    position: absolute;
-    left: 115px;
-    top: 300px;
-  }
+  background: #fff;
+  display: block;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 
+              0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
 
-  .caption span {
+.btn_mybtn2 {
+  width: 70px;
+  position: absolute;
+  left: 115px;
+  top: 300px;
+}
+
+.caption span {
       
-      font-size: 17px;
-      font-weight: bold;
-      margin-top: 5px; 
-      text-align: center; 
-      color: #D9853B;
-      text-transform: uppercase;
-    }
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 5px; 
+    text-align: center; 
+    color: #D9853B;
+    text-transform: uppercase;
+}
 
-  .hero-spacer {
-    position: relative; 
-    margin-top: 50px;
-    background-color: #558C89;
+.hero-spacer {
+  position: relative; 
+  margin-top: 50px;
+  background-color: #558C89;
+}
+
+
+
+.btn_message img {
+    position: absolute;
+    width: 70px;
+    top: 250px;
+    right: 40px;
+      
+}
+
+.frame {
+  width: 230px;
+  height: 250px;
+  padding: 10px 10px;
+  background-color: #ECECEA;
+  border-radius: 10px;
+}
+
+.frame img {
+    width: 210px;
+    height: 230px;
+    border-radius: 3px;
   }
 
-
-
-    .btn_message img {
-        position: absolute;
-        width: 70px;
-        top: 250px;
-        right: 40px;
-        
-    }
-
-    .frame {
-      width: 230px;
-      height: 250px;
-      padding: 10px 10px;
-      background-color: #ECECEA;
-      border-radius: 10px;
-    }
-
-    .frame img {
-      width: 210px;
-      height: 230px;
-      border-radius: 3px;
-    }
-
-      .blok_left, .blok_right {
-      font-size:16px;
-      font-weight:bold;
-      position:relative;
-      width:95%;
-      padding:1em;
-      margin:1em 10px 1em;
-      background:#fff;
-      box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 
+.blok_left, .blok_right {
+    font-size:16px;
+    font-weight:bold;
+    position:relative;
+    width:95%;
+    padding:1em;
+    margin:1em 10px 1em;
+    background:#fff;
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 
                   0 1px 4px rgba(0, 0, 0, 0.3), 
                   0 0 40px rgba(0, 0, 0, 0.1) inset;
-      border-radius: 10px;
-    }
+    border-radius: 10px;
+  }
 
-    .blok_left:before,
-    .blok_left:after {
-      content:"";
-      position:absolute;
-      z-index:-2;
-    }
+.blok_left:before,
+.blok_left:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+  }
 
-    .blok_right:before,
-    .blok_right:after {
-      content:"";
-      position:absolute;
-      z-index:-2;
-    }
+.blok_right:before,
+.blok_right:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+  }
 
-    .blok_right {
-      color: #D9853B
-;
+.blok_right {
+    color: #D9853B;
 
-    }
+  } 
 
-    .blok_left {
-      color: #558C89;
-    }
+.blok_left {
+    color: #558C89;
+  }
 
-    .frame.profile {
-      width: 170px;
-      height: 190px;
-      position: absolute;
-      background-color: #ECECEA;
-      border-radius: 10px;
-      right: 100px;
-      top: 10%;;
-    }
+.frame.profile {
+    width: 170px;
+    height: 190px;
+    position: absolute;
+    background-color: #ECECEA;
+    border-radius: 10px;
+    right: 100px;
+    top: 10%;;
+  }
 
-    .frame.profile img {
-      width: 150px;
-      height: 170px;
-      border-radius: 2px;
-    }
+.frame.profile img {
+    width: 150px;
+    height: 170px;
+    border-radius: 2px;
+  }
 
 
-    .authform {
-      margin-top: 8%;
-  
-    }
+.authform {
+    margin-top: 8%;
+  }
 
-  form#new_user.new_user, form#edit_user.edit_user, form.button_to {
+form#new_user.new_user, form#edit_user.edit_user, form.button_to {
     background-color: #558C89;
     border-color: #558C89;
     color:#ECECEA;
   }
 
 
-  form#new_user.new_user  a, .image_bottom a {
+form#new_user.new_user  a, .image_bottom a {
     color:#ECECEA; 
   }
 
-  .image_bottom a {
+.image_bottom a {
     margin-left: -35%;
   }
 
 
-  .btn-warning {
+.btn-warning {
     background-color: #D9853B;
     border-color: #D9853B;
   }
 
-  #plname {
-    color: #ECECEA;
-  }
+#plname {
+  color: #ECECEA;
+}
 
-  #quoteone, .count_people, .col-md-6 {
+#quoteone, .count_people, .col-md-6 {
     color: #ECECEA;
     margin: 1px auto;
     line-height: 1.8;
   }
 
-  .count_people {
-    margin-bottom: 10px;
+.count_people {
+  margin-bottom: 10px;
   }
 
-    .img-fiends {
-      width: 150px;
-      height: 170px;
-      background-color: #ECECEA;
-      border-radius: 10px;
+.img-fiends {
+    width: 150px;
+    height: 170px;
+    background-color: #ECECEA;
+    border-radius: 10px;
     
-    }
+  }
 
-    .img-fiends img {
-      width: 130px;
-      height: 160px;
-      padding-top: 10px;
-      border-radius: 2px;
-    }
+.img-fiends img {
+    width: 130px;
+    height: 160px;
+    padding-top: 10px;
+    border-radius: 2px;
+  }
 
-    .fa.fa-times.delete {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
+.fa.fa-times.delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
 
 
 
-  @media (max-width:1250px) {
+@media (max-width:1250px) {
   .btn-save {
     margin-left: -50px;
     margin-top: 10px;

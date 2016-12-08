@@ -10,39 +10,39 @@ class MessagesController < ApplicationController
 		
 	end
 
-def show 
+	def show 
 		 @message = Message.find(params[:id])
  	end	
 
-def create
-	@message = Message.new(message_params)
-	@message.save
-	if @message.save
-		redirect_to new_message_path
-	else 
-		redirect_to new_message_path, :alert => "Sorry, message can't be empty."
+	def create
+		@message = Message.new(message_params)
+		@message.save
+		if @message.save
+			redirect_to new_message_path
+		else 
+			redirect_to new_message_path, :alert => "Sorry, message can't be empty."
+		end
 	end
-end
 
 
-def destroy 
-	@message = Message.find(params[:id])
-	@message.destroy
-	render json: { success: true }
-end
+	def destroy 
+		@message = Message.find(params[:id])
+		@message.destroy
+		render json: { success: true }
+	end
 
-def index
-	@messages = Message.where(user_id: current_user.id)
-end
+	def index
+		@messages = Message.where(user_id: current_user.id)
+	end
 
-def received
-	@received = Message.where(user_id: current_user.id, sender_id: params[:user_id], created_at: (Time.now - 3.seconds)..Time.now).last(10).reverse
-	render :json => @received||[]
-end
+	def received
+		@received = Message.where(user_id: current_user.id, sender_id: params[:user_id], created_at: (Time.now - 3.seconds)..Time.now).last(10).reverse
+		render :json => @received||[]
+	end
 
 private 
 
- def message_params
+	  def message_params
       params.require(:message).permit(:user_id, :sender_id, :body)
     end
 
