@@ -7,5 +7,6 @@
   <li>FourSquare API Integration</li><br>
   <li>GMaps API Integration</li><br>
   <li>Ajax requests done with JavaScript</li><br>
+  <li>User login system was made using Devise.</li>
 </ul>
 
