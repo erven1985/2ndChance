@@ -1,10 +1,11 @@
 # 2ndChance 
 
-The platform which allows users to find other people through the visited places and to contact to them.
+<strong>The platform which allows users to find other people through the visited places and to contact to them.</strong>
 
--RubyOnRails<br>
--FourSquare API Integration<br>
--GMaps API Integration<br>
--Ajax requests done with JavaScript<br>
-
+<ul>
+  <li>RubyOnRails</li><br>
+  <li>FourSquare API Integration</li><br>
+  <li>GMaps API Integration</li><br>
+  <li>Ajax requests done with JavaScript</li><br>
+</ul>
 
