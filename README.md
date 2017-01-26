@@ -1,24 +1,12 @@
-# README
+# 2ndChance 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<strong>The platform which allows users to find other people through the visited places and to contact to them.</strong>
 
-Things you may want to cover:
+<ul>
+  <li>RubyOnRails</li><br>
+  <li>FourSquare API Integration</li><br>
+  <li>GMaps API Integration</li><br>
+  <li>Ajax requests done with JavaScript</li><br>
+  <li>User login system was made using Devise.</li>
+</ul>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
