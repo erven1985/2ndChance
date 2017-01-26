@@ -105,7 +105,8 @@ background-color: #74AFAD;
 
 .navbar.navbar-inverse.navbar-fixed-top {
   background-color: #558C89;
-  border-color: #558C89;  
+  border-color: #558C89; 
+
 }
 
 .img-circle {
@@ -121,7 +122,16 @@ background-color: #74AFAD;
 
 .navbar.navbar-inverse.navbar-fixed-top a:hover {
   text-decoration: underline;
+  background-color: #558C89;
 }
+
+.dropdown-menu {
+  background-color: #558C89;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top a:focus {
+    background-color: #558C89;
+  }
 
 .navbar-bottom {
 
@@ -311,9 +321,12 @@ form#new_user.new_user  a, .image_bottom a {
 
 
 
+
+
 @media (max-width:1250px) {
   .btn-save {
     margin-left: -50px;
     margin-top: 10px;
   }
 }
+
