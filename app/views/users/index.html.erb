@@ -1,31 +1,11 @@
-<style>
-	
-	body {
-		color:#ECECEA;
-		font-family: 'Merriweather Sans', sans-serif;
-	}
-	
-	.carousel-inner {
-		background-color: #fff;
-	}
-	
-	hr {
-		margin: 60px auto;
-	}
-	
-	h1 {
-		margin-top: 50px;
-	}
-
-</style>
 
 <% if signed_in? %>
      
      <div class="container">
 		    <div class="twelve columns">
 		      <div id="home" class="row">     
-     				 <div class="col-sm-10 col-sm-push-1">
-		            	<h1>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
+     				 <div class="col-sm-10 col-sm-push-1 img-responsive">
+		            	<h1 class="head-text responsive">Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
 		            		<div class="carousel slide" id="carousel-example">
 		            			<ol class="carousel-indicators">
 			            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
@@ -103,7 +83,7 @@
 		    <div class="twelve columns">
 		      <div id="home" class="row">     
      				 <div class="col-sm-10 col-sm-push-1">
-		            	<h1>Welcome to Second Chance!</h1>
+		            	<h1 class="head-text">Welcome to Second Chance!</h1>
 		            		<div class="carousel slide" id="carousel-example">
 		            			<ol class="carousel-indicators">
 			            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
@@ -177,4 +157,13 @@
 
     <% end %>
 
+<style>
+	
+	body {color:#ECECEA;font-family: 'Merriweather Sans', sans-serif;}
+	.carousel-inner {background-color: #fff;}
+	hr {margin: 60px auto;}
+	.head-text {margin-top: 50px;font-size: 30px;}
+	@media (max-width: 768px) {.head-text{font-size: 22px;} h3{font-size: 18px;}p{font-size: 13px;}}
 
+
+</style>
