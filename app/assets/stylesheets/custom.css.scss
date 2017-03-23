@@ -190,20 +190,6 @@ background-color: #74AFAD;
       
 }
 
-.frame {
-  width: 230px;
-  height: 250px;
-  padding: 10px 10px;
-  background-color: #ECECEA;
-  border-radius: 10px;
-}
-
-.frame img {
-    width: 210px;
-    height: 230px;
-    border-radius: 3px;
-  }
-
 .blok_left, .blok_right {
     font-size:16px;
     font-weight:bold;
@@ -287,7 +273,7 @@ form#new_user.new_user  a, .image_bottom a {
   color: #ECECEA;
 }
 
-#quoteone, .count_people, .col-md-6 {
+#quoteone, .count_people, .col-sm-6 {
     color: #ECECEA;
     margin: 1px auto;
     line-height: 1.8;
