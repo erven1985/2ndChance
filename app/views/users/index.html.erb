@@ -1,19 +1,22 @@
 
 <% if signed_in? %>
      
-     <div class="container">
-		    <div class="twelve columns">
-		      <div id="home" class="row">     
-     				 <div class="col-sm-10 col-sm-push-1 img-responsive">
+<div class="container" id="home">
+    <div class="twelve columns">
+<!-- Home Section -->
+  		<section  class="home-section">
+	      <div class="row">     
+     				 <div class="col-sm-10 col-sm-push-1">
 		            	<h1 class="head-text responsive">Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h1>
+		            		<!-- Carousel example div -->
 		            		<div class="carousel slide" id="carousel-example">
-		            			<ol class="carousel-indicators">
-			            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-			            			<li data-target="#carousel-example" data-slide-to="1"></li>
-			            			<li data-target="#carousel-example" data-slide-to="2"></li>
-		            			</ol>
+			            			<ol class="carousel-indicators">
+				            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+				            			<li data-target="#carousel-example" data-slide-to="1"></li>
+				            			<li data-target="#carousel-example" data-slide-to="2"></li>
+			            			</ol>
 
-		            		<div class="carousel-inner">
+		            				<div class="carousel-inner">
 				            			<div class="item active">
 				            					<img src="/images/caption.jpg" alt="Image">
 				            					<div class="carousel-caption"><h3>Places</h3></div>
@@ -26,19 +29,23 @@
 				            					<img src="/images/caption3.jpg" alt="Image">
 				            					<div class="carousel-caption"><h3>Find your soulmate</h3></div>
 				            			</div>
-		            		</div>
-		          	  			<a href="#carousel-example" class="left carousel-control" data-slide="prev">
-		            						<span class="icon-prev"></span>
-		            				</a>
-		            				<a href="#carousel-example" class="right carousel-control" data-slide="next">
-		            						<span class="icon-next"></span>
-		            				</a>		            			
-	            			</div>
-		          	</div>  
-        		</div>
-          	
-          	<hr>
-
+		            				</div>
+      	  							<a href="#carousel-example" class="left carousel-control" data-slide="prev"><span class="icon-prev"></span></a>
+          							<a href="#carousel-example" class="right carousel-control" data-slide="next"><span class="icon-next"></span></a>		            			
+      							</div>
+      							<!-- /Carousel example div end-->
+		         </div> 
+        	</div>
+  		</section>
+<!-- / Home Section end  -->
+			<section>
+					<div id="scrollbtn" class="scrollbtn">
+						 <a class="page-scroll"><span></span></a>
+					</div>
+			</section>
+<!-- About Section -->
+  			<section id="about" class="about-section">
+    				<hr>
 			    		<div id="info" class="row">
 			        		<div class="col-sm-6 col-sm-push-1">
 			        				<h3> What is this all about ? </h3>
@@ -52,46 +59,63 @@
 										</div>
 							</div>
 						<hr>
+							 <div class="row">
+										<div class="col-sm-6 col-sm-push-1">
+												<h3>How it works?</h3>
+										</div>
+										<div class="col-sm-5">
+												<p>1. Choose a time and place where you see the person with whom you want to meet again. Save it!</p>
+												<p>2. Look at how many people have visited this place on the day and time that you were there. Choose someone with whom you would like to meet again.</p>
+												<p>3. Send a message and wait for a response. We hope you will be able to get a Second Chance.</p>
+										</div>
+	 	 					</div>
+	 	 					<div id="scrollbtn1" class="scrollbtn">
+		        		<a class="page-scroll2"><span></span></a>
+ 							</div>
+ 	 					<hr>
+ 	 		</section>
+<!-- / About Section end -->
 
-								<div class="row">
-											<div class="col-sm-6 col-sm-push-1">
-													<h3>How it works?</h3>
-											</div>
-											
-											<div class="col-sm-5">
-													<p>1. Choose a time and place where you see the person with whom you want to meet again. Save it!</p>
-													<p>2. Look at how many people have visited this place on the day and time that you were there. Choose someone with whom you would like to meet again.</p>
-													<p>3. Send a message and wait for a response. We hope you will be able to get a Second Chance.</p>
-											</div>
-  	 	 					</div>
-  	 	 		<hr>
-		<!-- Video -->
-    	<div class="row">
+<!-- Video Section -->
+		<section id="video" class="video-section">
+    		<div class="row">
 		    		<div class="col-sm-10 col-sm-push-1">
 		    				<div align="center" class="embed-responsive embed-responsive-16by9 img-rounded">
 										 <video width="800" height="600" poster="/images/poster3.jpg" class="img-rounded" controls>
 					    						<source src="FindSomeone.mp4" type="video/mp4">
-					 						</video>
+					 					 </video>
 								</div>
     				</div>
     		</div>
-    </div>
+	</section>
+<!-- / Video Section End -->
+    <section>
+  		<div id="scrollbtn2">
+				<a class="page-scroll3"><span></span></a>
+			</div>			  	
+    </section>
+	 </div>
+</div>
+
 
     <% else %>
 
-     <div class="container">
-		    <div class="twelve columns">
-		      <div id="home" class="row">     
+<div class="container" id="home">
+    <div class="twelve columns">
+<!-- Home Section -->
+  		<section  class="home-section">
+	      <div class="row">     
      				 <div class="col-sm-10 col-sm-push-1">
 		            	<h1 class="head-text">Welcome to Second Chance!</h1>
+		            		<!-- Carousel example div -->
 		            		<div class="carousel slide" id="carousel-example">
-		            			<ol class="carousel-indicators">
-			            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-			            			<li data-target="#carousel-example" data-slide-to="1"></li>
-			            			<li data-target="#carousel-example" data-slide-to="2"></li>
-		            			</ol>
+			            			<ol class="carousel-indicators">
+				            			<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+				            			<li data-target="#carousel-example" data-slide-to="1"></li>
+				            			<li data-target="#carousel-example" data-slide-to="2"></li>
+			            			</ol>
 
-		            		<div class="carousel-inner">
+		            				<div class="carousel-inner">
 				            			<div class="item active">
 				            					<img src="/images/caption.jpg" alt="Image">
 				            					<div class="carousel-caption"><h3>Places</h3></div>
@@ -104,19 +128,23 @@
 				            					<img src="/images/caption3.jpg" alt="Image">
 				            					<div class="carousel-caption"><h3>Find your soulmate</h3></div>
 				            			</div>
-		            		</div>
-		          	  			<a href="#carousel-example" class="left carousel-control" data-slide="prev">
-		            						<span class="icon-prev"></span>
-		            				</a>
-		            				<a href="#carousel-example" class="right carousel-control" data-slide="next">
-		            						<span class="icon-next"></span>
-		            				</a>		            			
-	            			</div>
-		          	</div>  
-        		</div>
-          	
-          	<hr>
-
+		            				</div>
+      	  							<a href="#carousel-example" class="left carousel-control" data-slide="prev"><span class="icon-prev"></span></a>
+          							<a href="#carousel-example" class="right carousel-control" data-slide="next"><span class="icon-next"></span></a>		            			
+      							</div>
+      							<!-- /Carousel example div end-->
+		         </div> 
+        	</div>
+  		</section>
+<!-- / Home Section end  -->
+			<section>
+					<div id="scrollbtn" class="scrollbtn">
+						 <a class="page-scroll"><span></span></a>
+					</div>
+			</section>
+<!-- About Section -->
+  			<section id="about" class="about-section">
+    				<hr>
 			    		<div id="info" class="row">
 			        		<div class="col-sm-6 col-sm-push-1">
 			        				<h3> What is this all about ? </h3>
@@ -130,30 +158,43 @@
 										</div>
 							</div>
 						<hr>
+							 <div class="row">
+										<div class="col-sm-6 col-sm-push-1">
+												<h3>How it works?</h3>
+										</div>
+										<div class="col-sm-5">
+												<p>1. Choose a time and place where you see the person with whom you want to meet again. Save it!</p>
+												<p>2. Look at how many people have visited this place on the day and time that you were there. Choose someone with whom you would like to meet again.</p>
+												<p>3. Send a message and wait for a response. We hope you will be able to get a Second Chance.</p>
+										</div>
+	 	 					</div>
+	 	 					<div id="scrollbtn1" class="scrollbtn">
+		        		<a class="page-scroll2"><span></span></a>
+ 							</div>
+ 	 					<hr>
+ 	 		</section>
+<!-- / About Section end -->
 
-								<div class="row">
-											<div class="col-sm-6 col-sm-push-1">
-													<h3>How it works?</h3>
-											</div>
-											
-											<div class="col-sm-5">
-													<p>1. Choose a time and place where you see the person with whom you want to meet again. Save it!</p>
-													<p>2. Look at how many people have visited this place on the day and time that you were there. Choose someone with whom you would like to meet again.</p>
-													<p>3. Send a message and wait for a response. We hope you will be able to get a Second Chance.</p>
-											</div>
-  	 	 					</div>
-  	 	 		<hr>
-		<!-- Video -->
-    	<div class="row">
+<!-- Video Section -->
+		<section id="video" class="video-section">
+    		<div class="row">
 		    		<div class="col-sm-10 col-sm-push-1">
 		    				<div align="center" class="embed-responsive embed-responsive-16by9 img-rounded">
 										 <video width="800" height="600" poster="/images/poster3.jpg" class="img-rounded" controls>
 					    						<source src="FindSomeone.mp4" type="video/mp4">
-					 						</video>
+					 					 </video>
 								</div>
     				</div>
     		</div>
-    </div>
+	</section>
+<!-- / Video Section End -->
+    <section>
+  		<div id="scrollbtn2">
+				<a class="page-scroll3"><span></span></a>
+			</div>			  	
+    </section>
+	 </div>
+</div>
 
     <% end %>
 
@@ -165,5 +206,50 @@
 	.head-text {margin-top: 50px;font-size: 30px;}
 	@media (max-width: 768px) {.head-text{font-size: 22px;} h3{font-size: 18px;}p{font-size: 13px;}}
 
+#home, #about, #video {position: relative;}
+#scrollbtn:hover, #scrollbtn1:hover, #scrollbtn2:hover {cursor: pointer;}
+#scrollbtn, #scrollbtn1, #scrollbtn2 {position: absolute;left: 50%;}
+#scrollbtn2 {bottom: -2%;}
+.scrollbtn a {padding-top: 60px;}
+.scrollbtn a span {position: absolute;top: 0;left: 50%;width: 24px;height: 24px;margin-left: -12px;border-left: 1px solid #fff;border-bottom: 1px solid #fff;-webkit-transform: rotate(-45deg);transform: rotate(-45deg);-webkit-animation: sdb04 2s infinite;animation: sdb04 2s infinite;box-sizing: border-box;
+}
+@-webkit-keyframes sdb04 {
+	0% {-webkit-transform: rotate(-45deg) translate(0, 0);}
+	20% {-webkit-transform: rotate(-45deg) translate(-10px, 10px);}
+	40% {-webkit-transform: rotate(-45deg) translate(0, 0);}
+}
+@keyframes sdb04 {
+	0% {transform: rotate(-45deg) translate(0, 0);}
+	20% {transform: rotate(-45deg) translate(-10px, 10px);}
+	40% {transform: rotate(-45deg) translate(0, 0);}
+}
+
+#scrollbtn2 a {padding-top: 60px;}
+#scrollbtn2 a span {position: absolute;top: 0;left: 50%;width: 24px;height: 24px;margin-left: -12px;border-left: 1px solid #fff;border-bottom: 1px solid #fff;-webkit-transform: rotate(135deg);transform: rotate(135deg);-webkit-animation: sdb02 2s infinite;animation: sdb02 2s infinite;box-sizing: border-box;}
+@-webkit-keyframes sdb02 {
+	0% {-webkit-transform: rotate(135deg) translate(0, 0);}
+	20% {-webkit-transform: rotate(135deg) translate(-10px, 10px);}
+	40% {-webkit-transform: rotate(135deg) translate(0, 0);}
+}
+@keyframes sdb02 {
+	0% {transform: rotate(135deg) translate(0, 0);}
+	20% {transform: rotate(135deg) translate(-10px, 10px);}	
+	40% {transform: rotate(135deg) translate(0, 0);}
+}
 
 </style>
+<script>
+
+		$(".page-scroll").click(function() {
+		    $('html, body').animate({ scrollTop:  $('#about').offset().top }, 'slow');
+		});
+
+			$(".page-scroll2").click(function() {
+		  	  $('html, body').animate({ scrollTop:  $('#video').offset().top }, 'slow');
+			});
+	
+					$(".page-scroll3").click(function() {
+		    			$('html, body').animate({ scrollTop:  $('body').offset().top }, 'slow');
+		    	});
+	
+</script>
