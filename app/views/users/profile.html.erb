@@ -2,72 +2,50 @@
 <div class="container">
 
 <header class="jumbotron hero-spacer">
-  <% if signed_in? %>
-		<h3>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h3>
-	<% else %>
-<% end %>
-    <blockquote>
-        <p>My whole story is just about me having a second chance.</p>
-            <footer id="author">Two Chainz</footer>
-    </blockquote>
-        <div class="frame profile"><%= image_tag current_user.avatar.url(:thumb) %>
-    <p><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning btn-large" %>
-    </p>
+    <div class="row">
+        <div class="col-sm-9 col-sm-push-1">
+            <% if signed_in? %>
+                <h3>Welcome, <%= current_user.firstname %> <%= current_user.lastname %> !</h3>
+            <% else %>
+            <% end %>
+            <blockquote>
+                <p>My whole story is just about me having a second chance.</p>
+                <footer id="author">Two Chainz</footer>
+            </blockquote>
+        </div>
+        <div class="col-xs-offset-2 col-sm-2 col-sm-offset-0">
+            <div class="img-thumbnail"><%= image_tag current_user.avatar.url(:thumb) %></div>  
+                <p><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-warning btn-small" %></p>
+        </div>
     </div>
 </header>
 
 <hr>
 
-<!-- Title -->
-<div class="row">
-    <div class="col-lg-12">
-        <h3>Your connections</h3>
-    </div>
-</div>
-<!-- /.row -->
+<!-- Row -->
     <div class="row">
+        <div class="col-sm-12">
+            <h3>Your connections</h3>
+        </div>    
         <% @contacts.each do |m| %> 
-                    <div class="col-sm-2">
-                        <div class="img-fiends"><%= image_tag m.avatar.url, class: "img_bottom" %></div>
-                        <a class="name_bottom" href='/users/<%= m.id %>'><%= m.firstname %> <%= m.lastname %></a>
-                    </div>
+                    <div class="col-xs-offset-2 col-sm-2 col-sm-offset-0">
+                        <div class="img-thumbnail"><%= image_tag m.avatar.url, class: "img_bottom" %>
+                        <a id="friend-name" href='/users/<%= m.id %>'><%= m.firstname %> <%= m.lastname %></a></div>
+                    </div><br>
             <% end %>
-        </div>
+    </div>
+<!-- /Row -->
+</div>
 
-<!-- /.row -->
 
 <style>
+    /*Custom style*/
+    .caption {min-height: 230px;}
+    .btn-warning {margin-left: 25px;}
+    .hero-spacer {margin-bottom: 10px;min-height: 300px;position: relative;}
+    h3, p, a, #author {color: #ECECEA;font-family: 'Merriweather Sans', sans-serif;}
+    h3 {text-align: center;}
+    a:hover {color: #fff;}
+    main {padding-bottom: 10px;}
 
-    .caption {
-        min-height: 230px;
-    }
-
-    .btn-warning {
-  
-        margin-top: 20px;
-        margin-left: 25px;
-    }
-
-    .hero-spacer {
-        margin-bottom: 10px;
-        min-height: 300px;
-        position: relative;
-    }
-
-
-    h3, p, a, #author {
-        color: #ECECEA;
-        font-family: 'Merriweather Sans', sans-serif;
-    }
-    h3 {
-        text-align: center;
-    }
-
-    a:hover {
-        color: #fff;
-    }
-
-    main {
-        padding-bottom: 10px;
-    }
 </style>
