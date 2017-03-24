@@ -311,11 +311,23 @@ form#new_user.new_user  a, .image_bottom a {
 }
 
 
-
 @media (max-width:1250px) {
   .btn-save {
     margin-left: -50px;
     margin-top: 10px;
   }
 
+}
+
+@media (max-width:768px) {
+#map-div{
+  margin-left: -10px;
+}
+.btn_mybtn2 {
+  margin-left: 11px;
+}
+.text-info{
+  margin-left: -140px;
+  font-size: 40px;
+}
 }
