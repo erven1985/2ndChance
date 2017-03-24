@@ -2,7 +2,7 @@
    <!-- Google Map -->
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-xs-offset-0">
+        <div class="col-xs-12 col-xs-pull-1 col-sm-12 col-sm-offset-1">
             <header class="business-header">
                 <div class="wrapper">
                     <div class="map" id="map"></div>
@@ -24,7 +24,7 @@
     <!-- Search -->
     <div class="container">
         <div class="row">
-            <div class="form-group search rounded col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-4">
+            <div class="form-group search rounded col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-4">
                 <%= form_tag(places_path, method: :get, id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
                 <%= button_tag '', class: "btn-img" %>
@@ -39,7 +39,7 @@
 <% @places.each do |place| %>
 
 <div class="row center-block">
-    <div class="ol-xs-10 col-xs-offset-1 col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1 hero-feature">
+    <div class="ol-xs-10 col-xs-offset-0 col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1 hero-feature">
         <div class="thumbnail">
             <a href="/places/<%= place.id%>"><div class="erven linkone"><img src="<%= place.logo %>" alt=""></div></a>
             <div class="caption">
@@ -73,14 +73,14 @@
 
 <style>
 
-.search input {width: 280px;outline: none;padding:3px 10px 3px 10px;margin-bottom: 30px;}
+.search input {width: 280px;outline: none;padding:3px 10px 3px 10px;margin-bottom: 20px;}
 .rounded input {border-radius:15px;-moz-border-radius:15px;-webkit-border-radius:15px;}
 .btn-img {background: url('/images/search.png') no-repeat 3px 12px;margin-top: 3px;width: 36px;height: 36px;background-image:;border-color: #fff;outline: none;border:0;}
 .hero-feature {min-height: 320px;}
 .lead, .text-info {text-align: center;}
 .text-info {position: absolute;top: 50%;left: 40%;font-size: 20px;color: #fff;}
 #one {color: #ed551e;}
-
+@media(max-width: 768px){.search input{width: 200px;}}
 </style>
 
 <script async defer
