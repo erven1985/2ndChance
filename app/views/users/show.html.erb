@@ -1,60 +1,52 @@
 <!-- Page Content -->
 <div class="container">
-<div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <header class="jumbotron hero-spacer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div><%= image_tag @user.avatar.url, class: "img-responsive img-center img-thumbnail"  %></div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <h3><%= @user.firstname%> <%= @user.lastname%></h3>
-                <p>Age: <%= @age %></p>
-                <p>Gender: <%= @user.gender %></p>
-                <p>Email: <%= @user.email %></p>
-            </div>
-            <p><%= link_to image_tag('/images/message.png'), new_message_path(@user.id), class: "btn_message" %></p>
+    <div class="row">
+        <div class="col-sm-8 col-sm-push-2">
+            <header class="jumbotron hero-spacer ">
+                <div class="row">
+                    <div class="col-xs-12 col-xs-push-1 col-sm-6 col-sm-push-1">
+                        <div><%= image_tag @user.avatar.url, class: "img-responsive img-center img-thumbnail"  %></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <h3><%= @user.firstname%> <%= @user.lastname%></h3>
+                        <p>Age: <%= @age %></p>
+                        <p>Gender: <%= @user.gender %></p>
+                        <p>Email: <%= @user.email %></p>
+                        <p id="msg-btn"><%= link_to image_tag('/images/message.png'), new_message_path(@user.id), class: "btn_message" %></p>
+                    </div>
+                </div>
+            </header>        
         </div>
     </div>
-</header>
-        
-    </div>
-</div>
 
 <hr>
 
-<!-- Title -->
-<div class="row">
-    <div class="col-lg-12">
+<!-- .row -->
+
         <h3>Last Visited Places</h3>
-    </div>
-</div>
-<!-- /.row -->
-    <% @places.each do |place| %>
-        <div class="row text-center">
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <div class="erven"><img src="<%= place.logo %>" alt=""></div>
-                    <div class="caption">
-                        <span><%= place.name %></span>
-                        <p><%= place.address %></p>
-                        <p><%= place.phone %></p>
-                        <p>
-                        <%= link_to 'More Info', place_path(place.id), class: "btn btn-warning" %>
-                        </p>
+            <% @places.each do |place| %>
+                <div class="row-fluid text-center">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="thumbnail">
+                            <div class="erven"><img src="<%= place.logo %>" alt=""></div>
+                            <div class="caption">
+                                <span><%= place.name %></span>
+                                <p><%= place.address %></p>
+                                <p><%= place.phone %></p>
+                            </div>
+                            <p><%= link_to 'More Info', place_path(place.id), class: "btn btn-warning" %></p> 
+                        </div>
                     </div>
                 </div>
-            </div>
-    <% end %>
-</div>
+            <% end %>
+       
 <!-- /.row -->
-
+</div>
 <style>
     
     .caption {min-height: 230px;}
-    .btn-warning {position: absolute;top: 220px;right: 105px;}
-    .hero-spacer {margin-bottom: 50px;width: 800px;margin: 50px auto;}
+    .hero-spacer {margin-bottom: 50px;margin: 50px auto;}
     h3 {color: #ECECEA;text-align:center;}
+    @media(max-width: 768px){h3{text-align: left;}}
 
 </style>

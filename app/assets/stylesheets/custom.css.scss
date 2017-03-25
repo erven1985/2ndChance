@@ -76,9 +76,6 @@ p {
 	float: right;
 }
 
-.hero-feature {
-	min-height: 400px;
-}
 
 .caption {
 	min-height: 340px;
@@ -183,11 +180,8 @@ background-color: #74AFAD;
 
 
 .btn_message img {
-    position: absolute;
     width: 70px;
-    top: 250px;
     right: 40px;
-      
 }
 
 .blok_left, .blok_right {
@@ -310,6 +304,11 @@ form#new_user.new_user  a, .image_bottom a {
   text-align: center;
 }
 
+#msg-btn {
+  position:absolute;
+  right: 35px;
+  top: 60px;
+}
 
 @media (max-width:1250px) {
   .btn-save {
