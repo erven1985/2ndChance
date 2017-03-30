@@ -1,8 +1,63 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-sm-push-2">
+				<header class="jumbotron hero-spacer">
+					<%= form_for :message, remote: true do |f| %>
+						   	<%= f.text_area :body, size: "60x8", id: "form_text", placeholder: "Please, enter your message" %><br />
+					    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
+				    		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
+				     		<%= f.submit 'Send', :class => 'btn btn-warning', id: "form_text_btn" %>
+				 <% end %>
+			</header>
+			
+		</div>		
+	</div>
+</div>
+
+<hr>
+
+	<div class="container" id="refresh">
+<!-- sent messages -->
+			<div class="col-md-6">
+						<p>Sent:</p>
+								<% @sent.each do |s| %> 
+											<div class="blok_left" data-message_id="<%= s.id %>">
+													<p><%= s.body %>
+														<i class="fa fa-times delete" aria-hidden="true"></i>
+													</p><br>
+													<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
+											</div>
+								<% end %> 
+			</div>
+<!-- received messages -->
+			<div class="col-md-6">
+							<p>Received:</p>
+								<div id="received">
+									<% @received.each do |r| %> 
+											<div class="blok_right">
+													<p id="getfrom"><%= r.body %></p><br>
+														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
+											</div>
+									<% end %> 
+							</div>
+			</div>
+
+	</div>
+
+<style>
+		#form_text{border-radius: 5px;outline: none;color: grey;}
+		label{position: absolute;top: 72px;}
+		.btn {margin-top: 5px;width: 100px;}
+		h2 {font-size: 15px;margin: -10px auto;float: right;}
+    .hero-spacer {margin-bottom: 50px;margin: 50px auto;}  
+</style>
+
+
 
 <script type="text/javascript" src="/assets/dateformat.js"></script>
 <script>
 
-			$(document).ready( function() {
+		$(document).ready( function() {
 					messageDelete();
 					setInterval(refreshMessages,3000);
 		});
@@ -49,74 +104,3 @@
 			});
 		}
 </script>
-
-<style>
-		#form_text {
-			border-radius: 5px;
-			outline: none;
-			color: grey;
-		}
-
-		label {
-			position: absolute;
-			top: 72px;
-		}
-
-		.btn {
-			margin-top: 5px;
-			width: 100px;
-		}
-
-		h2 {
-			font-size: 15px;
-			margin: -10px auto;
-			float: right;
-		}
-
-    .hero-spacer {
-        margin-bottom: 50px;
-        width: 800px;
-        margin: 50px auto;
-    }
-    
-</style>
-
-
-<header class="jumbotron hero-spacer">
-	<%= form_for :message, remote: true do |f| %>
-		   	<%= f.text_area :body, size: "60x8", id: "form_text", placeholder: "Please, enter your message" %><br />
-	    	<%= f.hidden_field :user_id, :value => params[:user_id] %>
-    		<%= f.hidden_field :sender_id, :value => @current_user.id %>   
-     		<%= f.submit 'Send', :class => 'btn btn-warning' %>
- <% end %>
-</header>
-
-<hr>
-
-	<div class="container" id="refresh">
-<!-- sent messages -->
-			<div class="col-md-6">
-						<p>Sent:</p>
-								<% @sent.each do |s| %> 
-											<div class="blok_left" data-message_id="<%= s.id %>">
-													<p><%= s.body %>
-														<i class="fa fa-times delete" aria-hidden="true"></i>
-													</p><br>
-													<h2><%= s.created_at.strftime("%d %b. %Y") %> <%= s.created_at.strftime("%H:%M") %></h2>
-											</div>
-								<% end %> 
-			</div>
-<!-- received messages -->
-			<div class="col-md-6">
-							<p>Received:</p>
-								<div id="received">
-									<% @received.each do |r| %> 
-											<div class="blok_right">
-													<p id="getfrom"><%= r.body %></p><br>
-														<h2><%= r.created_at.strftime("%d %b. %Y") %> <%= r.created_at.strftime("%H:%M") %></h2>
-											</div>
-									<% end %> 
-							</div>
-			</div>
-
-	</div>
