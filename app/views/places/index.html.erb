@@ -72,6 +72,20 @@
 
         <% else %> 
         <p class="text-info">There are no chosen places in your list.</p>
+        <script>
+              $(document).ready(function() {
+                function myHeight() {
+                  var footer = $(".navbar-bottom").height(),
+                      height = $(window).height(),
+                      setHeight = height - footer -65;
+                $("#mmain").css({"height": setHeight, "padding-bottom":"0px"});
+                }
+                myHeight();
+                $(window).on('resize', function() {
+                  myHeight();
+                });
+              });
+        </script>
         <% end %>
 
 
@@ -129,18 +143,4 @@
                 });
             }
         }
-</script>
-<script>
-  $(document).ready(function() {
-    function myHeight() {
-      var footer = $(".navbar-bottom").height(),
-          height = $(window).height(),
-          setHeight = height - footer;
-    $("#mmain").css({"height": setHeight, "padding-bottom":"0px", "margin-top":"0px"});
-    }
-    myHeight();
-    $(window).on('resize', function() {
-      myHeight();
-    });
-  });
 </script>
