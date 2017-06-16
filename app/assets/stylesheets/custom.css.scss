@@ -306,7 +306,7 @@ form#new_user.new_user  a, .image_bottom a {
 #msg-btn {
   position:absolute;
   right: 0;
-  top: 230px;
+  top: 180px;
 }
 
 @media (max-width:1250px) {
@@ -319,14 +319,15 @@ form#new_user.new_user  a, .image_bottom a {
 
 @media (max-width:990px) {
   #msg-btn {
-    top: 190px;
+    top: 160px;
   }
 
 }
 @media (max-width:768px) {
 
 #msg-btn {
-    top: 18 0px;
+    top: 100px;
+    right:25px;
   }
 
 #map-div{
