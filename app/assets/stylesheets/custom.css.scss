@@ -86,7 +86,6 @@ p {
 }
 
 main {
-min-height: 705px;
 background-color: #74AFAD;
 }
 
@@ -306,8 +305,8 @@ form#new_user.new_user  a, .image_bottom a {
 
 #msg-btn {
   position:absolute;
-  right: 35px;
-  top: 60px;
+  right: 0;
+  top: 230px;
 }
 
 @media (max-width:1250px) {
@@ -318,7 +317,18 @@ form#new_user.new_user  a, .image_bottom a {
 
 }
 
+@media (max-width:990px) {
+  #msg-btn {
+    top: 190px;
+  }
+
+}
 @media (max-width:768px) {
+
+#msg-btn {
+    top: 18 0px;
+  }
+
 #map-div{
   margin-left: -10px;
 }

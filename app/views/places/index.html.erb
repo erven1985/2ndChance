@@ -78,7 +78,7 @@
                   var footer = $(".navbar-bottom").height(),
                       height = $(window).height(),
                       setHeight = height - footer -65;
-                $("#mmain").css({"height": setHeight, "padding-bottom":"0px"});
+                $("#mmain").css({"min-height": setHeight, "padding-bottom":"0px"});
                 }
                 myHeight();
                 $(window).on('resize', function() {

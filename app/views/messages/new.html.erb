@@ -56,10 +56,23 @@
 
 <script type="text/javascript" src="/assets/dateformat.js"></script>
 <script>
+	$(document).ready(function() {
+        function myHeight() {
+          var footer = $(".navbar-bottom").height(),
+              height = $(window).height(),
+              setHeight = height - footer -65;
+        $("#mmain").css({"min-height": setHeight, "padding-bottom":"0px"});
+        }
+        myHeight();
+        $(window).on('resize', function() {
+          myHeight();
+        });
+      });
+
 
 		$(document).ready( function() {
 					messageDelete();
-					setInterval(refreshMessages,3000);
+					setInterval(refreshMessages, 3000);
 		});
 
 
@@ -93,7 +106,7 @@
 					if( result && result.length ) {
 						result.forEach( function(c,i) {
 							$("#received").prepend(`
-								<div id="received" class="blok_right">
+								<div class="blok_right">
 									<p id="getfrom">${c.body}</p><br>
 														<h2>${dateFormat(new Date(c.created_at),"dddd, mmmm dS, yyyy h:mm TT")}</h2>
 								</div>`)
@@ -104,3 +117,4 @@
 			});
 		}
 </script>
+  

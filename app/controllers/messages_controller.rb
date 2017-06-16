@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
 		end
 	end
 
-
+    skip_before_action :verify_authenticity_token
 	def destroy 
 		@message = Message.find(params[:id])
 		@message.destroy

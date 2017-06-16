@@ -33,7 +33,7 @@
             <h3>Your connections</h3>
         </div>    
         <% @contacts.each do |m| %> 
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-2 col-sm-offset-0">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-0">
                         <div class="img-thumbnail connections">
                         <a id="friend-name" href='/users/<%= m.id %>'><%= image_tag m.avatar.url, class: "img_bottom" %><%= m.firstname %> <%= m.lastname %></a></div>
                     </div><br>
@@ -63,7 +63,7 @@
       var footer = $(".navbar-bottom").height(),
           height = $(window).height(),
           setHeight = height - footer;
-    $("#mmain").css({"height": setHeight, "padding-bottom":"0px"});
+    $("#mmain").css({"min-height": setHeight, "padding-bottom":"0px"});
     $(".btn.btn-default.btn-small").css({"width":profimage, "margin-left":"1px"});    
     }
     myHeight();
