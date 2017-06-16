@@ -39,7 +39,7 @@
 <% @places.each do |place| %>
 
 <div class="row center-block">
-    <div class="ol-xs-10 col-xs-offset-0 col-md-3 col-md-offset-0 col-sm-5 col-sm-offset-1 hero-feature">
+    <div class="col-xs-10 col-md-4 col-md-3 col-lg-2 hero-feature">
         <div class="thumbnail">
             <a href="/places/<%= place.id%>"><div class="erven linkone"><img src="<%= place.logo %>" alt=""></div></a>
             <div class="caption">
@@ -50,7 +50,11 @@
                 </address>
                 <p>Visited: <%= place.month %> <%= place.day %>, <%= place.year %> </p>
                 <p>From: <%= place.time_from %> to: <%= place.time_to %> </p>
+                    <% if (place.users.count - 1) == 0 %>
+                <p>People: &nbsp;<small style="color:red">Only you!</small></p>
+                <% else %> 
                 <p>People: <%= place.users.count - 1 %></p>
+                <% end %>
                 <p class="bottom_btns">
                     <%= link_to  image_tag('/images/trash.png'), place, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn_mybtn2" %>
                 </p>
@@ -68,6 +72,20 @@
 
         <% else %> 
         <p class="text-info">There are no chosen places in your list.</p>
+        <script>
+              $(document).ready(function() {
+                function myHeight() {
+                  var footer = $(".navbar-bottom").height(),
+                      height = $(window).height(),
+                      setHeight = height - footer -65;
+                $("#mmain").css({"min-height": setHeight, "padding-bottom":"0px"});
+                }
+                myHeight();
+                $(window).on('resize', function() {
+                  myHeight();
+                });
+              });
+        </script>
         <% end %>
 
 

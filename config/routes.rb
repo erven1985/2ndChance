@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   
 
 	get '/users/profile' 									=> 'users#profile'
-  
-	get '/search' 												=> 'searches#index', as: 'search'
+	get '/search' 											=> 'searches#index', as: 'search'
 	
 	devise_for :users, :controllers => { registrations: 'registrations' }	
   

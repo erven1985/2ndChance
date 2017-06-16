@@ -27,8 +27,17 @@
   <% end %>
 </div>
 
-<style>
-  main {
-    min-height: 705px;
+<script>
+  $(document).ready(function() {
+    function myHeight() {
+      var footer = $(".navbar-bottom").height(),
+          height = $(window).height(),
+          setHeight = height - footer;
+    $("#mmain").css({"height": setHeight, "padding-bottom":"0px", "margin-top":"0px"});
     }
-</style>
+    myHeight();
+    $(window).on('resize', function() {
+      myHeight();
+    });
+  });
+</script>
